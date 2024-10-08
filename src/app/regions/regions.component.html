@@ -1,0 +1,16 @@
+<div class="regions-container">
+    <h1>Regions</h1>
+    <div *ngFor="let region of regions" class="region-card">
+        <h2>{{ region.name }}</h2>
+        <img [src]="region.logourl" alt="{{ region.name }} Logo" />
+        <h3>Teams:</h3>
+        <ul>
+            <li *ngFor="let team of region.teams">{{ team }}</li>
+        </ul>
+        <h3>Competitions:</h3>
+        <ul>
+            <li *ngFor="let competition of region.competitions">{{ competition }}</li>
+        </ul>
+    </div>
+</div>
+
