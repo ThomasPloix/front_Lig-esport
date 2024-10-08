@@ -3,29 +3,44 @@
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%;}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #22092C;  // Dark background for the whole page
+  color: white;               // Set text color to white globally if needed
+}
+
+body {
+  display: flex;  // This ensures the content stretches fully
+  flex-direction: column;
+  justify-content: flex-start; // Make sure content starts from the top
+  align-items: center;         // Center content horizontally (optional)
+}
 
 .mat-mini-fab {
-  color : theme.$white !important;
+  color: theme.$white !important;
 }
 
 .mat-raised-button {
-  color : theme.$white !important;
+  color: theme.$white !important;
 }
 
 table {
   font-size: medium;
+
   tr {
     height: 57px;
+
     td {
       vertical-align: middle;
     }
   }
-  .regions-container {
-    background-color: #22092C; // Ensure this applies as intended
-    color: white;               // Text color
-    padding: 20px;              // Add some padding
-  }
+}
 
+// Ensure regions-container still has its styles
+.regions-container {
+  background-color: #22092C;  // Dark background for the regions section
+  color: white;
+  padding: 20px;
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RegionService } from 'services/region.service'; // Adjust the path based on your structure
+import { RegionService } from 'services/region.service';
 import { Region } from 'models/region.model';
 
 @Component({
@@ -9,6 +9,7 @@ import { Region } from 'models/region.model';
 })
 export class RegionsComponent implements OnInit {
   regions: Region[] = [];
+  flipStates: boolean[] = [];
 
   constructor(private regionService: RegionService) {}
 
@@ -20,11 +21,29 @@ export class RegionsComponent implements OnInit {
     this.regionService.findAll().subscribe(
         (data) => {
           this.regions = data;
+          this.flipStates = new Array(this.regions.length).fill(false);
         },
         (error) => {
           console.error('Error fetching regions:', error);
         }
     );
   }
+
+  // Method to flip the card
+  flipCard(index: number): void {
+    this.flipStates[index] = !this.flipStates[index];
+  }
+
+  // Helper function to divide teams into rows of two columns
+  getRows(teams: string[]): string[][] {
+    const rows: string[][] = [];
+    for (let i = 0; i < teams.length; i += 5) {
+      rows.push(teams.slice(i, i + 5)); // Take 5 teams per row
+    }
+    return rows;
+  }
+
+
 }
+
 

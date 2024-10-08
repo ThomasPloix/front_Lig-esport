@@ -15,6 +15,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import {ClickerGameComponent} from "./clicker-game/clicker-game.component";
 import {RegionsComponent} from "./regions/regions.component";
+import {RegionDetailComponent} from "./region-detail/region-detail.component";
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import {RegionsComponent} from "./regions/regions.component";
         NavbarComponent,
         HomeComponent,
         RegionsComponent,
+        RegionDetailComponent,
         ClickerGameComponent,
     ],
   imports: [

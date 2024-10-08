@@ -1,0 +1,14 @@
+<div class="region-detail-container">
+    <h1>{{ region?.name }}</h1>
+    <img [src]="region?.logourl" alt="{{ region?.name }} Logo" />
+
+    <h2>Teams:</h2>
+    <ul>
+        <li *ngFor="let team of region?.teams">{{ team }}</li>
+    </ul>
+
+    <h2>Competitions:</h2>
+    <ul>
+        <li *ngFor="let competition of region?.competitions">{{ competition }}</li>
+    </ul>
+</div>

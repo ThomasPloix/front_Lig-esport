@@ -1,19 +1,26 @@
-<div class="regions-container">
+<div class="header">
     <h1>Regions</h1>
-    <div *ngFor="let region of regions" class="region-card">
-        <img [src]="region.logourl" alt="{{ region.name }} Logo" />
-        <h2>{{ region.name }}</h2>
-        <!--
-        <h3>Teams:</h3>
-        <ul>
-            <li *ngFor="let team of region.teams">{{ team }}</li>
-        </ul>
-        <h3>Competitions:</h3>
-        <ul>
-            <li *ngFor="let competition of region.competitions">{{ competition }}</li>
-        </ul>
-        -->
-    </div>
 </div>
 
+<div class="regions-container">
+    <div *ngFor="let region of regions; let i = index" class="region-card" (click)="flipCard(i)">
+        <div class="card-inner" [class.flipped]="flipStates[i]">
+            <!-- Front of the card -->
+            <div class="card-front">
+                <img [src]="region.logourl" alt="{{ region.name }} Logo" />
+                <h2>{{ region.name }}</h2>
+            </div>
 
+            <!-- Back of the card with teams in a table -->
+            <div class="card-back">
+                <table>
+                    <tbody>
+                    <tr *ngFor="let row of getRows(region.teams)">
+                        <td *ngFor="let team of row">{{ team }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

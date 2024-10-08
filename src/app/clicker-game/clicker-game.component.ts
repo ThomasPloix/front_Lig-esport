@@ -10,21 +10,30 @@ export class ClickerGameComponent {
   isExploded: boolean = false;
   totalClicks: number = 10; // You can change this to any number of clicks
   clickSound = new Audio('assets/Meow.mp3');  // Load the sound file
+  explosionSound = new Audio('assets/Explosion.mp3');
 
   // Function to handle image click
   onImageClick() {
     if (!this.isExploded) {
-      this.clickCount++;
-      this.playClickSound();  // Play sound on click
-      if (this.clickCount >= this.totalClicks) {
+
+      if (this.clickCount < this.totalClicks-1  ){
+        this.playClickSound();  // Play sound on click
+    }
+      else {
+        this.playExplosionSound();
         this.isExploded = true;
       }
+      this.clickCount++;
     }
   }
   // Function to play the click sound
   playClickSound() {
     this.clickSound.currentTime = 0;  // Rewind sound to the beginning
     this.clickSound.play();           // Play the sound
+  }
+  playExplosionSound() {
+    this.explosionSound.currentTime = 0;  // Rewind sound to the beginning
+    this.explosionSound.play();           // Play the sound
   }
 
   // Function to reset the game
