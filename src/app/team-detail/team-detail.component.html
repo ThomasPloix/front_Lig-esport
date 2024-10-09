@@ -1,0 +1,14 @@
+<div class="header">
+    <h1>{{team?.name}}</h1>
+</div>
+<div class="teams-container">
+  <img src={{team?.logo}} size="30px">
+    Players:
+  <ul>
+    <li *ngFor="let player of team?.players">
+      {{player.pseudo}}
+      {{player.firstName}}
+      {{player.lastName}}
+    </li>
+  </ul>
+</div>

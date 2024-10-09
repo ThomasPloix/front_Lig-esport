@@ -12,7 +12,7 @@ import { MatIconModule } from "@angular/material/icon"
 import { MatButtonModule } from "@angular/material/button"
 import { HttpClientModule } from "@angular/common/http"
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './services/in-memory-data.service';
+//import { InMemoryDataService } from './services/in-memory-data.service';
 import {ClickerGameComponent} from "./clicker-game/clicker-game.component";
 import {RegionsComponent} from "./regions/regions.component";
 import {RegionDetailComponent} from "./region-detail/region-detail.component";
@@ -36,7 +36,7 @@ import {RegionDetailComponent} from "./region-detail/region-detail.component";
     MatButtonModule,
     HttpClientModule,
       // Configure InMemoryWebApi for the app
-      HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
+      //HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
   ],
   providers: [],
   bootstrap: [AppComponent],

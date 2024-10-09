@@ -1,12 +1,13 @@
-import { Player } from "./player.model"
+import {Player} from "./player.model";
 
 export interface Team {
-  id?: number;
-  logo: string;
-  name: string;
-  description: string;
-  players: Player[];
-  creation_date : string;
-  parternship: string;
-
+    id?: number;
+    name:string;
+    description: string;
+    logo: string;
+    place: string;
+    partners: string;
+    creation_date: string;
+    lieu: string;
+    players: Player[];
 }

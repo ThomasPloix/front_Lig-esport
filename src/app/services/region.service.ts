@@ -8,7 +8,7 @@ import { Team } from "../models/team.model"
   providedIn: "root",
 })
 export class RegionService {
-  private regionsUrl = "api/regions"; // Note the "api/" prefix here
+  private regionsUrl = "http://localhost:8080/regions"; // Note the "api/" prefix here
 
   constructor(private http: HttpClient) {}
 

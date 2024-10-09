@@ -11,5 +11,6 @@ export class NavbarComponent {
 
   constructor() {
     this.links.push({ name: "Regions", href: "regions" })
+    this.links.push({ name: "Teams", href: "teams/1" })
   }
 }
