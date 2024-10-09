@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';  // Import Router for navigation
 import { RegionService } from 'services/region.service';
 import { Region } from 'models/region.model';
 import { Team } from "../models/team.model"
@@ -12,7 +13,7 @@ export class RegionsComponent implements OnInit {
   regions: Region[] = [];
   flipStates: boolean[] = [];
 
-  constructor(private regionService: RegionService) {}
+  constructor(private regionService: RegionService,  private router: Router) {}
 
   ngOnInit(): void {
     this.loadRegions();
@@ -33,6 +34,11 @@ export class RegionsComponent implements OnInit {
   // Method to flip the card
   flipCard(index: number): void {
     this.flipStates[index] = !this.flipStates[index];
+  }
+  // Navigation logic
+  goToRegionDetails(regionId: number, event: Event): void {
+    event.stopPropagation(); // Prevents the card flip from being triggered
+    this.router.navigate(['/region-details', regionId]); // Adjust the route as needed
   }
 
   // Helper function to divide teams into rows of two columns

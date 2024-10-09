@@ -7,8 +7,10 @@
         <div class="card-inner" [class.flipped]="flipStates[i]">
             <!-- Front of the card -->
             <div class="card-front">
-                <img [src]=region.logo />
-                <h2>{{ region.name }}</h2>
+                <div class="Clickable">
+                    <img [routerLink]="['/region-details', region.id]" (click)="$event.stopPropagation()" [src]="region.logo" alt="{{ region.name }} Logo" />
+                    <h2 [routerLink]="['/region-details', region.id]" (click)="$event.stopPropagation()">{{ region.name }}</h2>
+                </div>
             </div>
 
             <!-- Back of the card with teams in a table -->
