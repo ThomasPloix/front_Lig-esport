@@ -7,7 +7,7 @@
         <div class="card-inner" [class.flipped]="flipStates[i]">
             <!-- Front of the card -->
             <div class="card-front">
-                <img [src]="region.logourl" alt="{{ region.name }} Logo" />
+                <img [src]=region.logo />
                 <h2>{{ region.name }}</h2>
             </div>
 
@@ -16,7 +16,8 @@
                 <table>
                     <tbody>
                     <tr *ngFor="let row of getRows(region.teams)">
-                        <td *ngFor="let team of row">{{ team }}</td>
+<!--                        <td *ngFor="let team of row">{{ team.name }}</td>-->
+                        <td> <img *ngFor="let team of row"  [src]="team.logo "/></td>
                     </tr>
                     </tbody>
                 </table>

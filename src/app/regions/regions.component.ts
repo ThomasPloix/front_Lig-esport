@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RegionService } from 'services/region.service';
 import { Region } from 'models/region.model';
+import { Team } from "../models/team.model"
 
 @Component({
   selector: 'app-regions',
@@ -35,8 +36,8 @@ export class RegionsComponent implements OnInit {
   }
 
   // Helper function to divide teams into rows of two columns
-  getRows(teams: string[]): string[][] {
-    const rows: string[][] = [];
+  getRows(teams: Team[]): Team[][] {
+    const rows: Team[][] = [];
     for (let i = 0; i < teams.length; i += 5) {
       rows.push(teams.slice(i, i + 5)); // Take 5 teams per row
     }

@@ -1,7 +1,9 @@
+import { Team } from "./team.model"
+
 export interface Region {
   id?: number;
-  logourl: string;
   name: string;
-  teams: string [];
+  logo: string;
+  teams: Team [];
   competitions: string [];
 }

@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Region } from "models/region.model";
 import { HttpClient } from "@angular/common/http";
+import { Team } from "../models/team.model"
 
 @Injectable({
   providedIn: "root",
@@ -31,7 +32,7 @@ export class RegionService {
     return this.http.delete<void>(`${this.regionsUrl}/${region.id}`);
   }
 
-  addTeamToRegion(region: Region, team: string): Region { // New method to add team
+  addTeamToRegion(region: Region, team: Team): Region { // New method to add team
     if (!region.teams) {
       region.teams = [team];
     } else {
@@ -40,7 +41,7 @@ export class RegionService {
     return region;
   }
 
-  removeTeamFromRegion(region: Region, team: string): Region { // New method to remove team
+  removeTeamFromRegion(region: Region, team: Team): Region { // New method to remove team
     const index = region.teams?.indexOf(team);
     if (index > -1) {
       region.teams?.splice(index, 1);
