@@ -1,34 +1,102 @@
+$dark-blue: #22092C;     // Main background color
+$deep-crimson: #872341;  // Border of the cards
+$vibrant-pink: #BE3144;  // Inner card background
+$soft-orange: #F05941;   // Text or inner elements
+
 table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-  font-size: 18px;
+  border: 1px solid #ddd;
+  border-collapse: separate;
+  border-left: 0;
+  border-radius: 4px;
+}
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+  border-collapse: separate;
+}
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+th, td {
+  padding: 20px 50px;
   text-align: left;
+  vertical-align: top;
+  border-left: 1px solid #ddd;
+}
+td {
+  border-top: 1px solid #ddd;
+}
+thead:first-child tr:first-child th:first-child, tbody:first-child tr:first-child td:first-child {
+  border-radius: 8px 0 0 0;
+}
+thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td:first-child {
+  border-radius: 0 0 0 8px;
 }
 
-table thead tr {
-  background-color: #009879;
-  color: #ffffff;
-  text-align: left;
-  font-weight: bold;
-}
 
-table th, table td {
-  padding: 12px 15px;
-}
 
-table tbody tr {
-  border-bottom: 1px solid #dddddd;
-}
 
-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
 
-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
-}
 
-table tbody tr:hover {
-  background-color: #f1f1f1;
+.match-card {
+  background: linear-gradient(0deg, #be3144, #d94e65);
+  color: white;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px 70px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  &.win {
+    box-shadow: 0 4px 8px rgba(65, 173, 59, 0.6); /* Green shadow for win */
+  }
+
+  &.loss {
+    box-shadow: 0 4px 8px rgba(201, 35, 16, 0.6); /* Red shadow for loss */
+  }
+
+  .match-header {
+    text-align: center;
+    border-bottom: 1px solid $dark-blue;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+
+    h2 {
+      color: $dark-blue;
+      font-size: 1.5rem;
+    }
+  }
+
+  .match-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .team {
+      flex: 1;
+      text-align: center;
+
+      h3 {
+        color: $dark-blue;
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+      }
+
+      p {
+        font-size: 1rem;
+        margin: 0;
+      }
+    }
+
+    .score {
+      flex: 0 0 auto;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 0 20px;
+    }
+  }
 }
