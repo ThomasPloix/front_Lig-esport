@@ -3,4 +3,5 @@ export interface Player {
     firstName:string;
     lastName: string;
     pseudo: string;
+    role: string;
 }

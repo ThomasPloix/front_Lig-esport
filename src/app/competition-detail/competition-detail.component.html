@@ -31,6 +31,7 @@
             <div class="team">
                 <h3>Team 1</h3>
                 <p>{{ match.team1.name }}</p>
+
             </div>
             <div class="score">
                 {{ match.score }}
@@ -38,6 +39,12 @@
             <div class="team">
                 <h3>Team 2</h3>
                 <p>{{ match.team2.name }}</p>
+            </div>
+        </div>
+        <div class="champions">
+            <h3>Champions Picked</h3>
+            <div class="champion-list">
+                <img *ngFor="let champion of match.champions_picked" src='https://ddragon.leagueoflegends.com/cdn/14.20.1/img/champion/{{champion.name}}.png' [alt]="champion.name" class="champion-img">
             </div>
         </div>
     </div>
