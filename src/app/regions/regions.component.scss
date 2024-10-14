@@ -3,6 +3,9 @@ $dark-blue: #22092C;     // Main background color
 $deep-crimson: #872341;  // Border of the cards
 $vibrant-pink: #BE3144;  // Inner card background
 $soft-orange: #F05941;   // Text or inner elements
+$soft-orange-gradient: linear-gradient(135deg, #F05941, #F97F62); // Slightly lighter hue
+$vibrant-pink-gradient: linear-gradient(135deg, #BE3144, #D94E65);
+$deep-crimson-gradient: linear-gradient(135deg, #872341, #A43A59);
 
 body {
   background-color: $dark-blue; // Set the background color of the page
@@ -29,104 +32,107 @@ body {
   justify-content: center;     // Center the cards in the container
   gap: 30px;                   // Add space between the cards
   padding: 20px;
-}
+}.region-card {
+   background: linear-gradient(135deg, #F05941, #F97F62);
+   border: 10px solid $deep-crimson;
+   color: white;
+   font-weight: 900;
+   border-radius: 20px;
+   padding: 20px;
+   width: 400px;
+   height: 300px;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   transition: transform 0.3s;
+   overflow: hidden;
 
-// Individual region card styling
-  .region-card {
-    background-color: $soft-orange; // Set the background color for the inside of the card
-  border: 30px solid $deep-crimson; // Thick border around the card
-  color: white;              // Text color inside the card
-  font-weight: 900;
-  border-radius: 20px;      // Rounded corners
-  padding: 20px;
-  width: 400px;             // Set the width of each card
-  height: 300px;            // Set the height of each card
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);  // Add a shadow effect for depth
-  display: flex;
-  flex-direction: column;     // Arrange items vertically
-  align-items: center;        // Center items horizontally
-  justify-content: center;    // Center items vertically
-  transition: transform 0.3s; // Add a hover effect
-    overflow: hidden;
+   img {
+     max-width: 60px;
+     margin-bottom: 10px;
+     cursor: url('/assets/coolcursor.png'), pointer;
+     border-radius: 5%;
+   }
 
-    &:hover {
-    transform: scale(1.05);  // Slightly scale up on hover
-  }
+   h2 {
+     margin: 5px 0;
+     font-size: 1.2rem;
+   }
 
-  img {
-    max-width: 60px;         // Limit the logo size inside the card
-    margin-bottom: 10px;
-    cursor: url('/assets/coolcursor.png'), pointer;
-    border-radius: 5%;
-  }
+   // Inner card flip settings
+   .card-inner {
+     position: relative;
+     width: 100%;
+     height: 100%;
+     transform-style: preserve-3d;
+     transition: transform 0.8s;
+     border-radius: 20px;
 
-  h2 {
-    margin: 5px 0;
-    font-size: 1.2rem;       // Adjust the font size for the region name
-  }
+     &.flipped {
+       transform: rotateY(180deg);  // Only handles the flipping
+     }
+   }
 
-  // Inner card flip settings
-  .card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.8s;
-    border-radius: 20px;
+   // Apply the scaling effect only to the front and back sides
+   .card-front, .card-back {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     backface-visibility: hidden;
+     border-radius: 15px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     padding: 10px;
+     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
 
-    &.flipped {
-      transform: rotateY(180deg);
-    }
-  }
+     transform: scale(1.2);  // Apply scale initially
+     transition: transform 0.3s, box-shadow 0.3s;
 
-  .card-front, .card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    box-shadow:0 6px 15px rgba(0, 0, 0, 0.6);
-  }
 
-  .card-front {
-    background-color: $vibrant-pink;  /* Front color */
-    color: white;
-    box-shadow:0 6px 15px rgba(0, 0, 0, 0.6);
-  }
+   }
+   &:hover {
+     .card-front {
+       transform: scale(1);  // Normal size when hovered
+     }
+   }
 
-  .card-back {
-    background-color: $deep-crimson;  /* Back color */
-    color: white;
-    transform: rotateY(180deg);
-    padding: 10px; // Added padding for consistency
 
-    // Team names table
-    table {
-      width: 100%;               // Full width
-      text-align: center;
-      border-collapse: collapse; // Remove spacing between table cells
-      margin-top: 10px;         // Add some space from the top
+   .card-front {
+     background: linear-gradient(360deg, #BE3144, #D94E65);;
+     color: white;
+   }
 
-      // Ensure no margin or padding between rows and cells
-      tr {
-        margin: 0;
-        padding: 0;
-      }
+   .card-back {
+     background: linear-gradient(0deg, #872341, #A43A59);;
+     color: white;
+     transform: rotateY(180deg);  // Rotate only the back
+     padding: 10px;
 
-      td {
-        padding: 5px 0;         // Tighten row spacing (adjust as needed)
-        font-size: 14px;
-        color: white;            // Ensure text color is white
-      }
+     // Team names table
+     table {
+       width: 100%;
+       text-align: center;
+       border-collapse: collapse;
+       margin-top: 10px;
 
-      h3 {
-        margin-bottom: 10px;
-      }
-    }
-  }
-}
+       tr {
+         margin: 0;
+         padding: 0;
+       }
+
+       td {
+         padding: 5px 0;
+         font-size: 14px;
+         color: white;
+       }
+
+       h3 {
+         margin-bottom: 10px;
+       }
+     }
+   }
+ }
