@@ -1,0 +1,26 @@
+.region-detail-container {
+  margin-top: 60px; /* Ensure there’s space for the navbar */
+  padding: 20px;
+  background-color: #22092C; /* Background to match the rest of the page */
+  color: white; /* Text color for readability */
+  min-height: 100vh; /* Make sure the page takes up full height */
+
+  h1, h2 {
+    color: #F05941; /* Color for headers */
+  }
+
+  img {
+    max-width: 200px; /* Constrain logo size */
+    margin: 20px 0;
+  }
+
+  ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+  }
+
+  li {
+    font-size: 1.2rem;
+    margin-bottom: 10px; /* Space between items */
+  }
+}
