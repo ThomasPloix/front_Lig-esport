@@ -17,10 +17,28 @@
         </thead>
         <tbody>
         <tr *ngFor="let match of competition?.matches">
-            <td [ngStyle]="{'color': match.result ? 'green' : 'red'}">{{ match.team1.name }}</td>
-            <td [ngStyle]="{'color': match.result ? 'red' : 'green'}">{{ match.team2.name }}</td>
+            <td [ngStyle]="{'background': match.result ? '#41ad3b' : '#c92310'}">{{ match.team1.name }}</td>
+            <td [ngStyle]="{'background': match.result ? '#c92310' : '#41ad3b'}">{{ match.team2.name }}</td>
             <td>{{ match.score }}</td>
         </tr>
         </tbody>
     </table>
+    <div class="match-card" *ngFor="let match of competition?.matches" [ngClass]="{'win': match.result, 'loss': !match.result}">
+        <div class="match-header">
+            <h2>Match Details</h2>
+        </div>
+        <div class="match-body">
+            <div class="team">
+                <h3>Team 1</h3>
+                <p>{{ match.team1.name }}</p>
+            </div>
+            <div class="score">
+                {{ match.score }}
+            </div>
+            <div class="team">
+                <h3>Team 2</h3>
+                <p>{{ match.team2.name }}</p>
+            </div>
+        </div>
+    </div>
 </div>

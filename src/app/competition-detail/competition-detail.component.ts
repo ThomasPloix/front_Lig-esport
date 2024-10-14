@@ -2,15 +2,16 @@ import {Component, OnInit} from '@angular/core';
 import {Competition} from "../models/competition.model";
 import {ActivatedRoute} from "@angular/router";
 import {CompetitionService} from "../services/competition.service";
-import {NgForOf, NgStyle} from "@angular/common";
+import {NgClass, NgForOf, NgStyle} from "@angular/common";
 
 @Component({
   selector: 'competition-detail',
   standalone: true,
-    imports: [
-        NgForOf,
-        NgStyle
-    ],
+  imports: [
+    NgForOf,
+    NgStyle,
+    NgClass
+  ],
   templateUrl: './competition-detail.component.html',
   styleUrl: './competition-detail.component.scss'
 })
