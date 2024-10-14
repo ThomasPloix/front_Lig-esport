@@ -8,6 +8,6 @@ export interface Team {
     place: string;
     partners: string;
     creation_date: string;
-    lieu: string;
     players: Player[];
+    lieu: string;
 }

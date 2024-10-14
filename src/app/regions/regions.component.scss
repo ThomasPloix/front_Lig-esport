@@ -93,6 +93,7 @@ body {
   .card-front {
     background-color: $vibrant-pink;  /* Front color */
     color: white;
+    box-shadow:0 6px 15px rgba(0, 0, 0, 0.6);
   }
 
   .card-back {
