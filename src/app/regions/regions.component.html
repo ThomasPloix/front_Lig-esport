@@ -9,6 +9,8 @@
             <div class="card-front">
                 <div class="Clickable">
                     <img [routerLink]="['/regions/', region.id]" (click)="$event.stopPropagation()" [src]="region.logo" alt="{{ region.name }} Logo" />
+                </div>
+                <div>
                     <h2 [routerLink]="['/regions/', region.id]" (click)="$event.stopPropagation()">{{ region.name }}</h2>
                 </div>
             </div>

@@ -32,8 +32,8 @@ body {
 }
 
 // Individual region card styling
-.region-card {
-  background-color: $soft-orange; // Set the background color for the inside of the card
+  .region-card {
+    background-color: $soft-orange; // Set the background color for the inside of the card
   border: 30px solid $deep-crimson; // Thick border around the card
   color: white;              // Text color inside the card
   font-weight: 900;
@@ -47,8 +47,9 @@ body {
   align-items: center;        // Center items horizontally
   justify-content: center;    // Center items vertically
   transition: transform 0.3s; // Add a hover effect
+    overflow: hidden;
 
-  &:hover {
+    &:hover {
     transform: scale(1.05);  // Slightly scale up on hover
   }
 
@@ -56,6 +57,7 @@ body {
     max-width: 60px;         // Limit the logo size inside the card
     margin-bottom: 10px;
     cursor: url('/assets/coolcursor.png'), pointer;
+    border-radius: 5%;
   }
 
   h2 {
@@ -70,6 +72,7 @@ body {
     height: 100%;
     transform-style: preserve-3d;
     transition: transform 0.8s;
+    border-radius: 20px;
 
     &.flipped {
       transform: rotateY(180deg);
@@ -87,7 +90,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow:0 6px 15px rgba(0, 0, 0, 0.6);
   }
 
   .card-front {
