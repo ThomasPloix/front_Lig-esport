@@ -1,27 +1,49 @@
-.region-detail-container {
-  margin-top: 60px; /* Ensure there’s space for the navbar */
-  padding: 20px;
-  background-color: #22092C; /* Background to match the rest of the page */
-  color: white; /* Text color for readability */
-  min-height: 100vh; /* Make sure the page takes up full height */
+.main-container {
+  width: 100% ; // Allow the container to be full-width
+  padding: 0; // Remove any padding if needed
+  margin: 0; // Remove any margin if needed
+}
 
-  h1, h2 {
-    color: #F05941; /* Color for headers */
+.region-detail-container {
+  width: 100%; // Set width to 80% of the page
+  max-width: 900px; // Ensure it doesn’t get too wide
+  margin: 20px auto; // Center with top/bottom margin
+  padding: 40px; // Inner padding
+  background-color: #22092C; // Background color
+  color: white; // Text color
+  border-radius: 10px; // Rounded corners
+  box-shadow: 0px 0px 20px #F05941; // Shadow for depth
+
+  h1 {
+    text-align: center; // Center the header
+    font-size: 2.5rem; // Header size
+    color: #F05941; // Color of the header
   }
 
   img {
-    max-width: 200px; /* Constrain logo size */
-    margin: 20px 0;
+    display: block; // Block element for centering
+    max-width: 250px; // Limit logo width
+    margin: 20px auto; // Center image
+    border-radius: 10px; // Rounded corners for logo
+    filter: drop-shadow(3px 3px 2px rgba(255, 255, 255, 0.6)); // Subtle shadow
+  }
 
+  h2 {
+    font-size: 1.8rem; // Size of sub-headings
+    color: #F05941; // Color for sub-headings
+    margin-top: 30px; // Spacing above sub-headings
   }
 
   ul {
-    list-style-type: none; /* Remove bullet points */
-    padding: 0;
-  }
+    list-style: none; // Remove bullet points
+    padding: 0; // Remove padding
 
-  li {
-    font-size: 1.2rem;
-    margin-bottom: 10px; /* Space between items */
+    li {
+      padding: 10px; // Inner padding for list items
+      background-color: #872341; // Background color for items
+      margin: 5px 0; // Space between items
+      border-radius: 8px; // Rounded corners for list items
+      font-size: 1.1rem; // Font size for items
+    }
   }
 }

@@ -1,17 +1,16 @@
-<div>
-    
-</div>
-<div class="region-detail-container">
-    <h1>{{ region?.name }}</h1>
-    <img [src]="region?.logo" alt="{{ region?.name }} Logo" />
+<div class="main-container"> <!-- Ensure this is full-width -->
+    <div class="region-detail-container">
+        <h1>{{ region?.name }}</h1>
+        <img [src]="region?.logo" alt="{{ region?.name }} Logo" />
 
-    <h2>Teams:</h2>
-    <ul>
-        <li *ngFor="let team of region?.teams">{{ team.name }}</li>
-    </ul>
+        <h2>Teams:</h2>
+        <ul>
+            <li *ngFor="let team of region?.teams">{{ team.name }}</li>
+        </ul>
 
-    <h2>Competitions:</h2>
-    <ul>
-        <li *ngFor="let competition of region?.competitions">{{ competition.name }}</li>
-    </ul>
+        <h2>Competitions:</h2>
+        <ul>
+            <li *ngFor="let competition of region?.competitions">{{ competition.name }}</li>
+        </ul>
+    </div>
 </div>
