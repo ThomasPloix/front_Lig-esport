@@ -7,11 +7,11 @@
 
     <h2>Teams:</h2>
     <ul>
-        <li *ngFor="let team of region?.teams">{{ team }}</li>
+        <li *ngFor="let team of region?.teams">{{ team.name }}</li>
     </ul>
 
     <h2>Competitions:</h2>
     <ul>
-        <li *ngFor="let competition of region?.competitions">{{ competition }}</li>
+        <li *ngFor="let competition of region?.competitions">{{ competition.name }}</li>
     </ul>
 </div>

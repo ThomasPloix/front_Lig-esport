@@ -18,6 +18,7 @@ export class RegionDetailComponent implements OnInit {
     const regionId = Number(this.route.snapshot.paramMap.get('id'));
     this.regionService.findById(regionId).subscribe((data) => {
       this.region = data;
+      console.log(data);
     });
   }
 }
