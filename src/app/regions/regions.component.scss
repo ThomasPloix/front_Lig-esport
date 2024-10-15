@@ -19,12 +19,24 @@ body {
 }
 
 // Header styling
+
+.background-video {
+  position: absolute; // Positioning relative to the homepage container
+  top: 0; // Align to top
+  left: 0; // Align to left
+  width: 100%; // Full width
+  height: 100%; // Full height
+  object-fit: cover; // Cover the entire container
+  z-index: 0; // Position it behind the content
+}
 .header {
+  position: relative;
+  z-index: 2;
   text-align: center;           // Center the header text
   margin-top: 20px;            // Add some margin above the header
   color: $soft-orange;          // Header text color
   h1 {
-    font-size: 2.5rem;         // Size the header text appropriately
+    font-size: 3.5rem;         // Size the header text appropriately
   }
 }
 
@@ -35,7 +47,12 @@ body {
   justify-content: center;     // Center the cards in the container
   gap: 30px;                   // Add space between the cards
   padding: 20px;
-}.region-card {
+
+}
+
+
+
+.region-card {
    background: linear-gradient(135deg, #F05941, #F97F62);
    border: 10px solid $deep-crimson;
    color: white;
@@ -51,6 +68,7 @@ body {
    justify-content: center;
    transition: transform 0.3s;
    overflow: hidden;
+  z-index: 1;
 
    img {
      max-width: 100px;

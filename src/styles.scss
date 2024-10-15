@@ -21,6 +21,7 @@ html, body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background:$dark-blue;
   color: white;               // Set text color to white globally if needed
+  z-index: -2;
 }
 
 body {
@@ -50,9 +51,3 @@ table {
   }
 }
 
-// Ensure regions-container still has its styles
-.regions-container {
-background-color: $dark-blue;
-  color: white;
-  padding: 20px;
-}

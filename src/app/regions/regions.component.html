@@ -1,8 +1,17 @@
-<div class="header">
-    <h1>Regions</h1>
-</div>
+
+
+<div class="regions-page">
+    <div class="header">
+        <h1>Regions</h1>
+    </div>
+    <video #backgroundVideo autoplay [muted]="true" loop height="100%" preload="auto" class="background-video">
+        <source src="assets/background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
 <div class="regions-container">
+
+
     <div *ngFor="let region of regions; let i = index" class="region-card" (click)="flipCard(i)">
         <div class="card-inner" [class.flipped]="flipStates[i]">
             <!-- Front of the card -->
@@ -31,4 +40,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>
