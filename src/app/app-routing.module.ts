@@ -10,7 +10,8 @@ import {TeamDetailComponent} from "./team-detail/team-detail.component";
 import {CompetitionDetailComponent} from "./competition-detail/competition-detail.component"; // Import the RegionsComponent
 import { TreeView } from "./tournament-package/tree/TreeView"
 import { TeamManagementView } from "./tournament-package/team/team-management/TeamManagementView"
-import {CreateTournamentComponent} from "./create-tournament/create-tournament.component"; // Import the RegionsComponent
+import {CreateTournamentComponent} from "./create-tournament/create-tournament.component";
+import {CreateTeamComponent} from "./create-team/create-team.component"; // Import the RegionsComponent
 
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'regions', component: RegionsComponent },
   { path: 'regions/:id', component: RegionDetailComponent }, // Detail route for a specific region
   { path: 'teams/:id', component: TeamDetailComponent }, // Detail route for a specific team
-  { path: 'createtournament', component: CreateTournamentComponent }, // Detail route for a specific team
+  { path: 'createtournament', component: CreateTournamentComponent },
+  {path: 'createteam', component: CreateTeamComponent },
   {path: 'teamstournament', component: TeamManagementView},
   {path: 'treetournament', component: TreeView},
   { path: 'competitions/:id', component: CompetitionDetailComponent }, // Detail route for a specific competition

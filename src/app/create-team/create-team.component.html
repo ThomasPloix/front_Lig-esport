@@ -1,0 +1,80 @@
+<div class="create-team">
+    <h1>Create Team</h1>
+
+    <!-- Team Name -->
+    <div class="form-group">
+        <label for="team-name">Team Name:</label>
+        <input
+                type="text"
+                id="team-name"
+                [(ngModel)]="team.name"
+                placeholder="Enter team name"
+                class="form-control"
+        />
+
+        <label for="team-description">Team Description:</label>
+        <input
+                type="text"
+                id="team-description"
+                [(ngModel)]="team.description"
+                placeholder="Enter team description"
+                class="form-control"
+        />
+
+        <label for="team-logo">Team Logo:</label>
+        <input
+                type="text"
+                id="team-logo"
+                [(ngModel)]="team.logo"
+                placeholder="Enter team logo"
+                class="form-control"
+        />
+
+        <label for="team-place">Team Place:</label>
+        <input
+                type="text"
+                id="team-place"
+                [(ngModel)]="team.place"
+                placeholder="Enter team place"
+                class="form-control"
+        />
+
+        <label for="team-partners">Team Partners:</label>
+        <input
+                type="text"
+                id="team-partners"
+                [(ngModel)]="team.partners"
+                placeholder="Enter team partners"
+                class="form-control"
+        />
+
+        <label for="team-creation">Team Creation:</label>
+        <input
+                type="text"
+                id="team-creation"
+                [(ngModel)]="team.creation_date"
+                placeholder="Enter team creation date"
+                class="form-control"
+        />
+
+        <label for="team-players">Select Players:</label>
+        <select id="team-players" multiple [(ngModel)]="team.players" class="form-control">
+            <option *ngFor="let player of allPlayers" [ngValue]="player">{{ player.pseudo }}</option>
+        </select>
+
+        <label for="team-lieu">Team Location:</label>
+        <input
+                type="text"
+                id="team-lieu"
+                [(ngModel)]="team.lieu"
+                placeholder="Enter team location"
+                class="form-control"
+        />
+
+    </div>
+
+    <!-- Submit Button -->
+    <button (click)="createTeam()" class="btn btn-primary">
+        Create Team
+    </button>
+</div>

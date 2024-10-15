@@ -22,9 +22,10 @@ tr {
 }
 th, td {
   padding: 20px 50px;
-  text-align: left;
+  text-align: center;
   vertical-align: top;
   border-left: 1px solid #ddd;
+  box-shadow: inset 0 0px 15px  rgba(0, 0, 0, 1);
 }
 td {
   border-top: 1px solid #ddd;

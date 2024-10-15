@@ -1,13 +1,23 @@
+$dark-blue: #22092C;     // Main background color
+$deep-crimson: #872341;  // Border of the cards
+$vibrant-pink: #BE3144;  // Inner card background
+$soft-orange: #F05941;   // Text or inner elements
+$blue-gradient-end: #3b3b6b;  // A lighter complementary blue
 
-.team-detailos {
+$dark-blue-gradient: linear-gradient(135deg, $dark-blue, $blue-gradient-end);
+$soft-orange-gradient: linear-gradient(135deg, #F05941, #F97F62); // Slightly lighter hue
+$vibrant-pink-gradient: linear-gradient(135deg, #BE3144, #D94E65);
+$deep-crimson-gradient: linear-gradient(135deg, #872341, #A43A59);
+
+.team-details {
   max-width: 900px;
-  margin: 0 auto;
+  margin: 10px auto;
   padding: 20px;
   backdrop-filter: blur(10px);
   background: #22092C80;
   color: white;
   border-radius: 10px;
-  box-shadow: 0px 0px 20px ;
+  box-shadow: 0px 0px 20px;
   position: relative;
 
   .header {
@@ -24,14 +34,12 @@
     margin: 20px 0;
 
     .team-logo {
-      //background-color: white;
       border-radius: 10px;
       flex: 1;
       img {
         max-width: 150px;
         border-radius: 10px;
-        filter: drop-shadow( 3px 3px 2px rgb(255, 255, 255,0.6 ));
-        //border: 10px solid white;
+        filter: drop-shadow(3px 3px 2px rgba(255, 255, 255, 0.6));
       }
     }
 
@@ -54,7 +62,6 @@
   .team-partners {
     margin-top: 30px;
 
-
     h2 {
       font-size: 1.8rem;
       color: #F05941;
@@ -69,58 +76,59 @@
         justify-content: space-between; /* Space between player info and button */
         align-items: center; /* Center vertically */
         padding: 10px;
-        background-color: #872341;
+        background: linear-gradient(0deg, #872341, #A43A59);;
         margin: 5px 0;
         border-radius: 8px;
         font-size: 1.1rem;
+        cursor: pointer; /* Make entire li clickable */
         flex-direction: column; /* Arrange children in a column */
 
         .player-info {
           display: flex;
-          flex-direction: row; /* Arrange player name and details vertically */
-          width: 100%;
+          flex-direction: row;
+          width: 100%; /* Adjust width of player info */
         }
-        .Infos-base{
+
+        .Infos-base {
           width: 80%;
         }
 
-        .play-button{
+        .play-button {
           background: transparent;
           border: none;
           cursor: pointer; /* Change cursor to pointer */
-          display: flex; /* Make the button a flex container */
+          display: flex;
           justify-content: center; /* Center icon in the button */
-          align-items: center; /* Center icon vertically */
+          align-items: center;
           width: 20%;
         }
+
         .play-icon {
-          width: 20px;            // Adjust size as needed
-          height: 20px;           // Adjust size as needed
-                // Add space between text and icon
-          cursor: pointer;        // Change cursor to pointer
-          align-content: end;
+          width: 20px; /* Adjust size as needed */
+          height: 20px; /* Adjust size as needed */
+          cursor: pointer; /* Change cursor to pointer */
         }
+
         .play-icon:hover {
-          opacity: 0.4;          // Add a hover effect if desired
+          opacity: 0.4; /* Add hover effect */
           transform: scale(1.2);
         }
+
         /* Player Details Styles */
         .player-details {
           opacity: 0; /* Start hidden */
           max-height: 0; /* Start with height 0 */
           overflow: hidden; /* Hide the overflow */
           transition: max-height 0.3s ease-in-out; /* Add transition for max-height */
-          //background-color: rgba(255, 255, 255, 0.2); /* Background for details */
           border-radius: 5px; /* Rounded corners */
-          color: #fff; /* Change text color for visibility */
-          flex-direction: column; /* Arrange details in column */
+          color: #fff; /* Text color */
           width: 100%; /* Full width */
         }
 
         .player-details.expanded {
           max-height: 500px; /* Set to a max height that is larger than the content */
           opacity: 1; /* Fully visible when expanded */
-          padding: 10px; /* Padding only when expanded */
+          padding: 10px;
           margin-top: 10px;
         }
       }

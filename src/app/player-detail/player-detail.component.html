@@ -4,9 +4,12 @@
     <p><strong>Rôle:</strong> {{ player.role }}</p>
     <div>
         <strong>Champions:</strong>
-        <div *ngFor="let champion of player.champion_prefs" class="champion-list">
-                <li>{{ champion.name }}</li>
+        <ul class="champion-list">
+        <li *ngFor="let champion of player.champion_prefs">
+
                 <img src='{{champion.image}}' [alt]="champion.name" class="champion-img">
-        </div>
+        </li>
+        </ul>
+    </div>
     <!-- Add other player-specific information here -->
 </div>

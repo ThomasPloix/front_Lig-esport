@@ -1,6 +1,6 @@
 <div class="team-detail-page">
 
-    <div class="team-detailos">
+    <div class="team-details">
         <div class="header">
             <h1><strong>{{ team?.name }}</strong></h1>
         </div>
@@ -23,15 +23,15 @@
         <div class="team-players">
             <h2>Players</h2>
             <ul>
-                <li *ngFor="let player of team?.players; let i = index"> <!-- Added let i = index -->
+                <li *ngFor="let player of team?.players; let i = index" (click)="togglePlayerDetails(i)" class="player-box">
                     <div class="player-info">
                         <div class="Infos-base">
-                        <strong >{{ player.pseudo }}</strong> - {{ player.firstName }} {{ player.lastName }}
+                            <strong >{{ player.pseudo }}</strong> - {{ player.firstName }} {{ player.lastName }}
                         </div>
                         <!-- Add play button icon next to each player -->
-                        <button (click)="togglePlayerDetails(i)" class="play-button">
+                        <div class="play-button">
                             <img src="assets/more.png" alt="Play" class="play-icon">
-                        </button>
+                        </div>
                     </div>
 
 

@@ -6,6 +6,16 @@ img {
 
 .champion-list {
   display: flex;
+  list-style: none;
   align-items: center;
   gap: 10px; /* Adjust the gap as needed */
+  flex-direction: row;
+  margin-top: 5px;
+  padding: 0;
+  flex-wrap: wrap;
+}
+.champion-img{
+  flex-direction: row;
+  border-radius: 5px; /* Add rounded corners if needed */
+
 }

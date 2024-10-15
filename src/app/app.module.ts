@@ -22,6 +22,7 @@ import { TeamManagementView } from "./tournament-package/team/team-management/Te
 import { TeamComponent } from "./tournament-package/team/TeamComponent"
 import { TeamFormComponent } from "./tournament-package/team/team-form/TeamFormComponent"
 import { CreateTournamentComponent} from "./create-tournament/create-tournament.component";
+import {CreateTeamComponent} from "./create-team/create-team.component";
 
 @NgModule({
     declarations: [
@@ -32,6 +33,7 @@ import { CreateTournamentComponent} from "./create-tournament/create-tournament.
         RegionDetailComponent,
         ClickerGameComponent,
         CreateTournamentComponent,
+        CreateTeamComponent,
 
       TreeView,
       NodeComponent,
