@@ -24,7 +24,7 @@ export class CompetitionDetailComponent implements OnInit {
     // Get the id from the route and fetch the competition
     const competitionId = Number(this.route.snapshot.paramMap.get('id'));
     this.competitionService.findById(competitionId).subscribe((data) => {
-      this.competition = data.competitions[0];
+      this.competition = data;
       this.competition.matches.forEach((match) => {
         match.champions_picked.forEach((champion) => {
           champion.image = `/assets/champions/${champion.name.replace(/ /g, "")}_0.jpg`;

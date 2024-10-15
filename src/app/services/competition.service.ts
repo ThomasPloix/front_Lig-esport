@@ -17,8 +17,8 @@ export class CompetitionService {
         return this.http.get<Competition[]>(this.regionsUrl);
     }
 
-    findById(id: number): Observable<Region> { // Change id to bigint
-        return this.http.get<Region>(`${this.regionsUrl}/${id}`);
+    findById(id: number): Observable<Competition> { // Change id to bigint
+        return this.http.get<Competition>(`${this.regionsUrl}/${id}`);
     }
 
     createTournament(tournament: Competition): Observable<Competition> {
