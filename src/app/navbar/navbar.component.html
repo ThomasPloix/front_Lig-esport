@@ -1,6 +1,16 @@
 <nav>
   <div>
     <img src="assets/mapLogo.png" routerLink=""  alt="Map logo"/>
+      <!-- Search Bar -->
+      <div class="nav-search">
+          <input
+                  type="text"
+                  placeholder="Search..."
+                  [(ngModel)]="searchQuery"
+                  (input)="onSearch()"
+                  class="search-input"
+          />
+      </div>
     <mat-nav-list>
       @for (link of links; track link) {
       <a mat-list-item routerLink="{{ link.href }}" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">

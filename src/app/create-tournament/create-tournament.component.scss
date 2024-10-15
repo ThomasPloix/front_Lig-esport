@@ -1,0 +1,27 @@
+.create-tournament {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: black;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .team-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+  .matches-section {
+    margin-top: 20px;
+  }
+
+  button {
+    margin-top: 20px;
+  }
+}

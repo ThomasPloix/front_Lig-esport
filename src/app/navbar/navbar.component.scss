@@ -14,13 +14,18 @@ $deep-crimson-gradient: linear-gradient(0deg, #872341, #A43A59);
 
 
 nav {
-  height: 80px;
+  height: 62px;
   position: fixed;
   top:0px;
   left:0px;
   background: $deep-crimson-gradient;
   width:100%;
   z-index: 1000;
+
+  navsearch{
+    margin-left:40px;
+  }
+
 
 
 
@@ -31,6 +36,7 @@ nav {
 
     img {
       margin-left: 20px;
+      margin-right: 40px;
       height: 60px;
       transition: 0.3s;
 

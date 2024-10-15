@@ -1,0 +1,51 @@
+<div class="create-tournament">
+    <h1>Create Tournament</h1>
+
+    <!-- Tournament Name -->
+    <div class="form-group">
+        <label for="tournament-name">Tournament Name:</label>
+        <input
+                type="text"
+                id="tournament-name"
+                [(ngModel)]="tournament.name"
+                placeholder="Enter tournament name"
+                class="form-control"
+        />
+    </div>
+
+    <!-- Teams Selection -->
+    <div class="form-group">
+        <label for="teams-select">Select Teams:</label>
+        <div *ngFor="let team of allTeams">
+            <input
+                    type="checkbox"
+                    [value]="team.id"
+                    (change)="toggleTeamSelection(team)"
+            />
+            <img [src]="team.logo" alt="{{ team.name }}" class="team-logo" />
+            {{ team.name }}
+        </div>
+    </div>
+
+    <!-- Matches -->
+    <div *ngIf="selectedTeams.length > 1" class="matches-section">
+        <h2>Matches</h2>
+        <div *ngFor="let match of tournament.matches">
+            <h3>{{ match.team1.name }} vs {{ match.team2.name }}</h3>
+            <div class="form-group">
+                <label for="match-date-{{ match.id }}">Match Date:</label>
+                <input
+                        type="date"
+                        id="match-date-{{ match.id }}"
+                        [(ngModel)]="match.date"
+                        class="form-control"
+                />
+            </div>
+        </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button (click)="createTournament()" class="btn btn-primary">
+        Create Tournament
+    </button>
+</div>

@@ -8,7 +8,8 @@ import {Region} from "../models/region.model";
     providedIn: "root",
 })
 export class CompetitionService {
-    private regionsUrl = "http://localhost:8080/regions"; // Note the "api/" prefix here
+    private regionsUrl = "http://localhost:8080/compete"; // Note the "api/" prefix here
+
 
     constructor(private http: HttpClient) {}
 
@@ -19,4 +20,10 @@ export class CompetitionService {
     findById(id: number): Observable<Region> { // Change id to bigint
         return this.http.get<Region>(`${this.regionsUrl}/${id}`);
     }
+
+    createTournament(tournament: Competition): Observable<Competition> {
+        return this.http.post<Competition>(`${this.regionsUrl}`, tournament);
+    }
+
+
 }

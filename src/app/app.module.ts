@@ -21,6 +21,7 @@ import { OverlayDirective } from "./tournament-package/directive/OverlayDirectiv
 import { TeamManagementView } from "./tournament-package/team/team-management/TeamManagementView"
 import { TeamComponent } from "./tournament-package/team/TeamComponent"
 import { TeamFormComponent } from "./tournament-package/team/team-form/TeamFormComponent"
+import { CreateTournamentComponent} from "./create-tournament/create-tournament.component";
 
 @NgModule({
     declarations: [
@@ -30,6 +31,8 @@ import { TeamFormComponent } from "./tournament-package/team/team-form/TeamFormC
         RegionsComponent,
         RegionDetailComponent,
         ClickerGameComponent,
+        CreateTournamentComponent,
+
       TreeView,
       NodeComponent,
       TeamManagementView,
