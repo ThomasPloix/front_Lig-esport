@@ -11,11 +11,16 @@ import { FormsModule } from "@angular/forms"
 import { MatIconModule } from "@angular/material/icon"
 import { MatButtonModule } from "@angular/material/button"
 import { HttpClientModule } from "@angular/common/http"
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-//import { InMemoryDataService } from './services/in-memory-data.service';
 import {ClickerGameComponent} from "./clicker-game/clicker-game.component";
 import {RegionsComponent} from "./regions/regions.component";
 import {RegionDetailComponent} from "./region-detail/region-detail.component";
+import { NgOptimizedImage } from "@angular/common";
+import { TreeView } from "./tournament-package/tree/TreeView"
+import { NodeComponent } from "./tournament-package/node/NodeComponent"
+import { OverlayDirective } from "./tournament-package/directive/OverlayDirective"
+import { TeamManagementView } from "./tournament-package/team/team-management/TeamManagementView"
+import { TeamComponent } from "./tournament-package/team/TeamComponent"
+import { TeamFormComponent } from "./tournament-package/team/team-form/TeamFormComponent"
 
 @NgModule({
     declarations: [
@@ -25,6 +30,11 @@ import {RegionDetailComponent} from "./region-detail/region-detail.component";
         RegionsComponent,
         RegionDetailComponent,
         ClickerGameComponent,
+      TreeView,
+      NodeComponent,
+      TeamManagementView,
+      TeamComponent,
+      TeamFormComponent,
     ],
   imports: [
     BrowserModule,
@@ -35,8 +45,11 @@ import {RegionDetailComponent} from "./region-detail/region-detail.component";
     MatIconModule,
     MatButtonModule,
     HttpClientModule,
-      // Configure InMemoryWebApi for the app
-      //HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
+    NgOptimizedImage,
+    OverlayDirective,
+
+    // Configure InMemoryWebApi for the app
+    // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
   ],
   providers: [],
   bootstrap: [AppComponent],

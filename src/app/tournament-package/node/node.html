@@ -1,0 +1,16 @@
+<button class="node_title"
+ [ngClass]="{
+          '--last': node.last,
+          '--won': node.status == 'won',
+          '--lost': node.status == 'lost',
+          '--highlighted': node.highlighted,
+          '--winner': node.last && node.team,
+          '--clickable': node.team && !node.status && !node.last
+        }"
+[overlay] = "node"
+(click)="node.win()">
+  {{ node.team ? node.team.name : '-' }}
+</button>
+<div class="node_children" [ngClass]="{'--debug': node.debug}" *ngIf="node.children.length > 0">
+  <node class="node" [node]="subnode" [ngClass]="{'--debug': node.debug}" *ngFor="let subnode of node.children"></node>
+</div>

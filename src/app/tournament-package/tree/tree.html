@@ -1,0 +1,27 @@
+<div class="container --global">
+  <div class="button-bar">
+    <a class="button" [routerLink]="['/teamstournament']">Changer les équipes</a>
+<!--    <button class="button" (click)="toggleDebug()">{{ debug ? "Retoruner à la vue normale" : "Debuger l'arbre" }}</button>-->
+  </div>
+
+  <br><hr><br>
+
+  <!-- GOGO node-ception -->
+  <div style="overflow-x: auto; text-align: center;">
+    <node class="node --tree" *ngIf="tree" [node]="(tree)" [ngClass]="{'&#45;&#45;debug': tree.debug}" ></node>
+<!--    -->
+  </div>
+
+  <br><hr><br>
+
+  <div class="log" *ngIf="!log || log.length < 1">
+    Quelle équipe à gagné le premier match ? ( Cliquez ! )
+  </div>
+
+<!--  <div *ngFor="#match of log" class="log">-->
+<!--    {{ match.date |date:'jms' }} :-->
+<!--    <span class="log_winner">{{ match.winner.name }}</span>-->
+<!--    a gagné face à-->
+<!--    <span class="log_looser">{{ match.looser.name }}</span>-->
+<!--  </div>-->
+</div>

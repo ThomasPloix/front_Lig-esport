@@ -1,0 +1,36 @@
+<div class="container --global">
+
+  <h2 class="title">
+    Ajoutez vos équipes pour générer l’arbre des compétitions
+  </h2>
+
+  <!-- Boucle pour afficher les équipes -->
+  <team *ngFor="let team of teams" [team]="team"></team>
+
+  <br>
+
+  <!-- Formulaire pour ajouter une équipe -->
+  <team-form></team-form>
+
+  <!-- Barre de boutons -->
+  <div class="button-bar">
+        <span class="message">
+            <!-- Icône succès si isFilled est true -->
+            <i *ngIf="isFilled()" class="message_status material-icons --success">check</i>
+          <!-- Icône erreur si isFilled est false -->
+            <i *ngIf="!isFilled()" class="message_status material-icons --error">close</i>
+          <!-- Message pour afficher le nombre d'équipes -->
+            Vous avez {{ teams.length }} équipe{{ teams.length > 1 ? 's' : '' }}
+        </span>
+    <!-- Bouton pour aller à l'arbre des compétitions -->
+    <button class="button" [routerLink]="['/treetournament']" [disabled]="!isFilled()">Aller à l'arbre</button>
+  </div>
+
+  <!-- Avertissement sur le nombre d'équipes nécessaire -->
+  <div class="button-bar">
+        <span class="message --icon-offset --sub">
+            Vous devez avoir 2, 4, 8, 16 ou 32 équipes
+        </span>
+  </div>
+
+</div>
