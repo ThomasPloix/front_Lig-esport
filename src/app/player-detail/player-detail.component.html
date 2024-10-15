@@ -1,8 +1,12 @@
 <div class="player-details">
-    <h3>{{ player.pseudo }}</h3>
     <p><strong>First Name:</strong> {{ player.firstName }}</p>
     <p><strong>Last Name:</strong> {{ player.lastName }}</p>
-    <p><strong>Last Name:</strong> {{ player.lastName }}</p>
-    <p><strong>Last Name:</strong> {{ player.lastName }}</p>
+    <p><strong>Rôle:</strong> {{ player.role }}</p>
+    <div>
+        <strong>Champions:</strong>
+        <div *ngFor="let champion of player.champion_prefs" class="champion-list">
+                <li>{{ champion.name }}</li>
+                <img src='{{champion.image}}' [alt]="champion.name" class="champion-img">
+        </div>
     <!-- Add other player-specific information here -->
 </div>

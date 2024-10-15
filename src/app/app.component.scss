@@ -1,4 +1,15 @@
 body, .main-content {
-  margin-top: 100px; /* Adjust this value based on the navbar height */
-
+  margin-top: 75px; /* Adjust this value based on the navbar height */
+  position: relative;
+  z-index: 1;
+}
+.background-video {
+  margin-top:62px;
+  position: fixed; // Positioning relative to the homepage container
+  top: 0; // Align to top
+  left: 0; // Align to left
+  width: 100%; // Full width
+  height: 100%; // Full height
+  object-fit: cover; // Cover the entire container
+  z-index: -1; // Position it behind the content
 }

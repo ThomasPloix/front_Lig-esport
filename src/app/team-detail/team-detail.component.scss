@@ -1,11 +1,14 @@
-.team-details {
+
+.team-detailos {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #22092C;
+  backdrop-filter: blur(10px);
+  background: #22092C80;
   color: white;
   border-radius: 10px;
-  box-shadow: 0px 0px 20px #F05941;
+  box-shadow: 0px 0px 20px ;
+  position: relative;
 
   .header {
     text-align: center;

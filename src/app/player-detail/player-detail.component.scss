@@ -1,0 +1,11 @@
+img {
+  max-width: 50px;
+  border-radius: 10px;
+  //border: 10px solid white;
+}
+
+.champion-list {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjust the gap as needed */
+}

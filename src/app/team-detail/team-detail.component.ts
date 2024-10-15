@@ -33,9 +33,14 @@ export class TeamDetailComponent implements OnInit {
     console.log(teamId);
     this.teamService.findById(teamId).subscribe((data) => {
       this.team = data;
-      console.log(data);
-    });
-  }
+      this.team.players.forEach((player) => {
+          player.champion_prefs.forEach((champion) => {
+            champion.image = `/assets/champions/${champion.name.replace(/ /g, "")}_0.jpg`;
+          });
+        });
+      });
+      console.log(this.team);
+    }
 
   // Function to toggle player details
   togglePlayerDetails(index: number): void {

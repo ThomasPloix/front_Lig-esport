@@ -20,16 +20,6 @@ body {
 
 // Header styling
 
-.background-video {
-  position: absolute; // Positioning relative to the homepage container
-  top: 0; // Align to top
-  left: 0; // Align to left
-  width: 100%; // Full width
-  height: 100%; // Full height
-  object-fit: cover; // Cover the entire container
-  z-index: 0; // Position it behind the content
-}
-
 // Regions container styling
 .regions-container {
   display: flex;
@@ -58,7 +48,6 @@ body {
    justify-content: center;
    transition: transform 0.3s;
    overflow: hidden;
-  z-index: 1;
 
    img {
      max-width: 100px;

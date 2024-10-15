@@ -1,53 +1,55 @@
-<div class="team-details">
-    <div class="header">
-        <h1>{{ team?.name }}</h1>
-    </div>
+<div class="team-detail-page">
 
-    <!-- Team Info Section -->
-    <div class="team-info">
-        <!-- Logo and Basic Details -->
-        <div class="team-logo">
-            <img [src]="team?.logo" alt="{{ team?.name }} Logo" />
+    <div class="team-detailos">
+        <div class="header">
+            <h1><strong>{{ team?.name }}</strong></h1>
+        </div>
+        <!-- Team Info Section -->
+        <div class="team-info">
+            <!-- Logo and Basic Details -->
+            <div class="team-logo">
+                <img [src]="team?.logo" alt="{{ team?.name }} Logo" />
+            </div>
+
+            <div class="team-basic-details">
+                <p><strong>Description:</strong> {{ team?.description }}</p>
+                <p><strong>Founded:</strong> {{ team?.creation_date | date:'mediumDate' }}</p>
+                <p><strong>Location:</strong> {{ team?.place }}</p>
+            </div>
         </div>
 
-        <div class="team-basic-details">
-            <p><strong>Description:</strong> {{ team?.description }}</p>
-            <p><strong>Founded:</strong> {{ team?.creation_date | date:'mediumDate' }}</p>
-            <p><strong>Location:</strong> {{ team?.place }}</p>
-        </div>
-    </div>
-
-    <!-- Players Section -->
-    <!-- Players Section -->
-    <div class="team-players">
-        <h2>Players</h2>
-        <ul>
-            <li *ngFor="let player of team?.players; let i = index"> <!-- Added let i = index -->
-                <div class="player-info">
-                    <div class="Infos-base">
-                    <strong >{{ player.pseudo }}</strong> - {{ player.firstName }} {{ player.lastName }}
+        <!-- Players Section -->
+        <!-- Players Section -->
+        <div class="team-players">
+            <h2>Players</h2>
+            <ul>
+                <li *ngFor="let player of team?.players; let i = index"> <!-- Added let i = index -->
+                    <div class="player-info">
+                        <div class="Infos-base">
+                        <strong >{{ player.pseudo }}</strong> - {{ player.firstName }} {{ player.lastName }}
+                        </div>
+                        <!-- Add play button icon next to each player -->
+                        <button (click)="togglePlayerDetails(i)" class="play-button">
+                            <img src="assets/more.png" alt="Play" class="play-icon">
+                        </button>
                     </div>
-                    <!-- Add play button icon next to each player -->
-                    <button (click)="togglePlayerDetails(i)" class="play-button">
-                        <img src="assets/more.png" alt="Play" class="play-icon">
-                    </button>
-                </div>
 
 
-                <!-- Expanded player details dynamically rendered -->
-                <div [ngClass]="{'player-details': true, 'expanded': expandedPlayerIndex === i}">
-                    <app-player-details [player]="player"></app-player-details> <!-- Now player is in context -->
-                </div>
-            </li>
-        </ul>
-    </div>
+                    <!-- Expanded player details dynamically rendered -->
+                    <div [ngClass]="{'player-details': true, 'expanded': expandedPlayerIndex === i}">
+                        <app-player-details [player]="player"></app-player-details> <!-- Now player is in context -->
+                    </div>
+                </li>
+            </ul>
+        </div>
 
 
-    <!-- Partners Section -->
-    <div class="team-partners">
-        <h2>Partners</h2>
-        <ul>
-            <p>{{team?.partners}}</p>
-        </ul>
+        <!-- Partners Section -->
+        <div class="team-partners">
+            <h2>Partners</h2>
+            <ul>
+                <p>{{team?.partners}}</p>
+            </ul>
+        </div>
     </div>
 </div>

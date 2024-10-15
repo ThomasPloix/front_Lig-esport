@@ -36,11 +36,15 @@ thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td
   border-radius: 0 0 0 8px;
 }
 
-
+.champions{
+  text-align:center;
+}
 
 .champion-list {
+  text-align: center;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -53,7 +57,8 @@ thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td
 
 
 .match-card {
-  background: linear-gradient(0deg, #be3144, #d94e65);
+  background: linear-gradient(0deg, #be314480, #d94e6580);
+  backdrop-filter: blur(10px);
   color: white;
   border-radius: 10px;
   max-width: 400px;
@@ -63,7 +68,7 @@ thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
   &.win {
-    box-shadow: 0 4px 8px rgba(65, 173, 59, 0.6); /* Green shadow for win */
+    box-shadow: 0 4px 8px rgba(65, 173, 59, 0.9); /* Green shadow for win */
   }
 
   &.loss {
