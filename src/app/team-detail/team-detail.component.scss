@@ -51,6 +51,7 @@
   .team-partners {
     margin-top: 30px;
 
+
     h2 {
       font-size: 1.8rem;
       color: #F05941;
@@ -61,11 +62,64 @@
       padding: 0;
 
       li {
+        display: flex; /* Align player name and button horizontally */
+        justify-content: space-between; /* Space between player info and button */
+        align-items: center; /* Center vertically */
         padding: 10px;
         background-color: #872341;
         margin: 5px 0;
         border-radius: 8px;
         font-size: 1.1rem;
+        flex-direction: column; /* Arrange children in a column */
+
+        .player-info {
+          display: flex;
+          flex-direction: row; /* Arrange player name and details vertically */
+          width: 100%;
+        }
+        .Infos-base{
+          width: 80%;
+        }
+
+        .play-button{
+          background: transparent;
+          border: none;
+          cursor: pointer; /* Change cursor to pointer */
+          display: flex; /* Make the button a flex container */
+          justify-content: center; /* Center icon in the button */
+          align-items: center; /* Center icon vertically */
+          width: 20%;
+        }
+        .play-icon {
+          width: 20px;            // Adjust size as needed
+          height: 20px;           // Adjust size as needed
+                // Add space between text and icon
+          cursor: pointer;        // Change cursor to pointer
+          align-content: end;
+        }
+        .play-icon:hover {
+          opacity: 0.4;          // Add a hover effect if desired
+          transform: scale(1.2);
+        }
+        /* Player Details Styles */
+        .player-details {
+          opacity: 0; /* Start hidden */
+          max-height: 0; /* Start with height 0 */
+          overflow: hidden; /* Hide the overflow */
+          transition: max-height 0.3s ease-in-out; /* Add transition for max-height */
+          //background-color: rgba(255, 255, 255, 0.2); /* Background for details */
+          border-radius: 5px; /* Rounded corners */
+          color: #fff; /* Change text color for visibility */
+          flex-direction: column; /* Arrange details in column */
+          width: 100%; /* Full width */
+        }
+
+        .player-details.expanded {
+          max-height: 500px; /* Set to a max height that is larger than the content */
+          opacity: 1; /* Fully visible when expanded */
+          padding: 10px; /* Padding only when expanded */
+          margin-top: 10px;
+        }
       }
     }
   }
