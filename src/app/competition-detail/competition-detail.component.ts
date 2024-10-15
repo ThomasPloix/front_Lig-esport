@@ -25,6 +25,11 @@ export class CompetitionDetailComponent implements OnInit {
     const competitionId = Number(this.route.snapshot.paramMap.get('id'));
     this.competitionService.findById(competitionId).subscribe((data) => {
       this.competition = data.competitions[0];
+      this.competition.matches.forEach((match) => {
+        match.champions_picked.forEach((champion) => {
+          champion.image = `/assets/champions/${champion.name.replace(/ /g, "")}_0.jpg`;
+        });
+      });
       console.log(this.competition);
     });
   }

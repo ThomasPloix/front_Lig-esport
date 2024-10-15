@@ -4,4 +4,5 @@ export interface Champion{
     title: string;
     lore: string;
     tags: string;
+    image: string;
 }

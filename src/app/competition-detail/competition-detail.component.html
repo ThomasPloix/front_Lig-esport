@@ -44,7 +44,7 @@
         <div class="champions">
             <h3>Champions Picked</h3>
             <div class="champion-list">
-                <img *ngFor="let champion of match.champions_picked" src='https://ddragon.leagueoflegends.com/cdn/14.20.1/img/champion/{{champion.name}}.png' [alt]="champion.name" class="champion-img">
+                <img *ngFor="let champion of match.champions_picked" src='{{champion.image}}' [alt]="champion.name" class="champion-img">
             </div>
         </div>
     </div>
