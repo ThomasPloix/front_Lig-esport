@@ -44,8 +44,8 @@ export class RegionsComponent implements OnInit {
   // Helper function to divide teams into rows of two columns
   getRows(teams: Team[]): Team[][] {
     const rows: Team[][] = [];
-    for (let i = 0; i < teams.length; i += 5) {
-      rows.push(teams.slice(i, i + 5)); // Take 5 teams per row
+    for (let i = 0; i < teams.length; i += 4) {
+      rows.push(teams.slice(i, i + 4)); // Take 5 teams per row
     }
     return rows;
   }
