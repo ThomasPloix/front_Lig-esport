@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Team} from "../models/team.model";
+import {Player} from "../models/player.model";
 import {ActivatedRoute} from "@angular/router";
 import {TeamService} from "../services/team.service";
 import {DatePipe, NgClass, NgForOf, NgIf} from "@angular/common";
@@ -23,7 +24,7 @@ import { CommonModule } from '@angular/common'; // Import CommonModule
 export class TeamDetailComponent implements OnInit {
 
   team: Team | undefined;
-  teams: Team[] = [];
+  teams: Team [] = [];
   expandedPlayerIndex: number | null = null; // To track which player is expanded
 
   constructor(private route: ActivatedRoute, private teamService: TeamService) {}
@@ -33,8 +34,8 @@ export class TeamDetailComponent implements OnInit {
     console.log(teamId);
     this.teamService.findById(teamId).subscribe((data) => {
       this.team = data;
-      this.team.players.forEach((player) => {
-          player.champion_prefs.forEach((champion) => {
+      this.team.players.forEach((Player) => {
+          Player.champion_prefs.forEach((champion) => {
             champion.image = `/assets/champions/${champion.name.replace(/ /g, "")}_0.jpg`;
           });
         });

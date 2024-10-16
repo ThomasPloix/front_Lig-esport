@@ -20,4 +20,10 @@ export class TeamService {
     createTeam(team: Team): Observable<Team> {
         return this.http.post<Team>(`${this.teamsUrl}`, team);
     }
+    /*
+    findByRegion(): Observable<Team[]> {
+        return this.http.get<Team[]>(this.teamsUrl/${reg});
+    }
+
+     */
 }

@@ -53,8 +53,8 @@
             <option *ngFor="let player of allPlayers" [ngValue]="player">{{ player.pseudo }}</option>
         </select>
         <label for="region_id">Select Region:</label>
-        <select id="region_id"  [(ngModel)]="regions" class="form-control">
-            <option *ngFor="let region of regions" [ngValue]="region.id">{{ region.name }}</option>
+        <select id="region_id"  [(ngModel)]="team.region_id" class="form-control">
+            <option *ngFor="let region of regions" [ngValue]="region.id" >{{ region.name }}</option>
         </select>
 
         <label for="team-lieu">Team Location:</label>

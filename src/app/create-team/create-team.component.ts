@@ -6,6 +6,7 @@ import {PlayerService} from "../services/player.service";
 import {Router} from "@angular/router";
 import { RegionService } from "../services/region.service"
 import { Region } from "../models/region.model"
+import {toNumbers} from "@angular/compiler-cli/src/version_helpers";
 
 @Component({
   selector: 'create-team',
@@ -13,7 +14,7 @@ import { Region } from "../models/region.model"
   styleUrl: './create-team.component.scss'
 })
 export class CreateTeamComponent implements OnInit {
-  team: Team = { name: '', description: '', logo: '',partners:'',creation_date:'',players: [], lieu:'', region_id:1 };
+  team: Team = { name: '', description: '', logo: '',partners:'',creation_date:'',players: [], lieu:'', region_id: 1 };
   allPlayers: Player[] = [];
   regions: Region[] = [];
     constructor(private teamService: TeamService, private router: Router, private playerService: PlayerService,
