@@ -8,7 +8,7 @@ import {Competition} from "../models/competition.model";
     providedIn: "root",
 })
 export class TeamService {
-    private teamsUrl = "http://localhost:8080/teams"; // Note the "api/" prefix here
+    private teamsUrl = "http://localhost:8080/team"; // Note the "api/" prefix here
     constructor(private http: HttpClient) {}
 
     findAll(): Observable<Team[]> {

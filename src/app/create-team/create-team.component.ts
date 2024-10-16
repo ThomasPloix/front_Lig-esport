@@ -11,7 +11,7 @@ import {Router} from "@angular/router";
   styleUrl: './create-team.component.scss'
 })
 export class CreateTeamComponent implements OnInit {
-  team: Team = { name: '', description: '', logo: '',place:'',partners:'',creation_date:'',players: [], lieu:'' };
+  team: Team = { name: '', description: '', logo: '',place:'',partners:'',creation_date:'',players: [], lieu:'', region_id:1 };
   allPlayers: Player[] = [];
     constructor(private teamService: TeamService, private router: Router, private playerService: PlayerService) {}
 

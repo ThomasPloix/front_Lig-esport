@@ -10,4 +10,5 @@ export interface Team {
     creation_date: string;
     players: Player[];
     lieu: string;
+    region_id?: number;
 }
