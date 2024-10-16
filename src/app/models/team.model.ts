@@ -5,7 +5,6 @@ export interface Team {
     name:string;
     description: string;
     logo: string;
-    place: string;
     partners: string;
     creation_date: string;
     players: Player[];

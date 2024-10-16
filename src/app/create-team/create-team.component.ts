@@ -4,6 +4,8 @@ import {Player} from "../models/player.model";
 import{TeamService} from "../services/team.service";
 import {PlayerService} from "../services/player.service";
 import {Router} from "@angular/router";
+import { RegionService } from "../services/region.service"
+import { Region } from "../models/region.model"
 
 @Component({
   selector: 'create-team',
@@ -11,11 +13,18 @@ import {Router} from "@angular/router";
   styleUrl: './create-team.component.scss'
 })
 export class CreateTeamComponent implements OnInit {
-  team: Team = { name: '', description: '', logo: '',place:'',partners:'',creation_date:'',players: [], lieu:'', region_id:1 };
+  team: Team = { name: '', description: '', logo: '',partners:'',creation_date:'',players: [], lieu:'', region_id:1 };
   allPlayers: Player[] = [];
-    constructor(private teamService: TeamService, private router: Router, private playerService: PlayerService) {}
+  regions: Region[] = [];
+    constructor(private teamService: TeamService, private router: Router, private playerService: PlayerService,
+                private regionService: RegionService
+        ) {}
 
   ngOnInit(): void {
+
+      this.regionService.findAll().subscribe((regions) => {
+      this.regions = regions;
+      });
     // Fetch existing teams from the backend
     this.playerService.findAll().subscribe((players) => {
       this.allPlayers = players;

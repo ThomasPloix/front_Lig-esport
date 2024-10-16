@@ -1,6 +1,7 @@
 import { NodeModel } from "../model/nodeModel"
 import { TeamModel } from "../model/TeamModel"
 import { TeamHolderService } from "./TeamHolderService"
+import { TournamentService } from "./TournamentService"
 
 
 export class TreeManager{
@@ -10,9 +11,11 @@ export class TreeManager{
 
 
   static get tree():NodeModel{
-    if(!this.hasTree()){
-      this.buildTree();
-    }
+    // if(!this.hasTree()){
+    //   console.log("Building tree");
+    //   this.buildTree();
+    // }
+    this.buildTree();
     return this._tree;
   }
 

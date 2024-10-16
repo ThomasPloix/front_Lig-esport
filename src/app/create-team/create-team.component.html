@@ -30,15 +30,6 @@
                 class="form-control"
         />
 
-        <label for="team-place">Team Place:</label>
-        <input
-                type="text"
-                id="team-place"
-                [(ngModel)]="team.place"
-                placeholder="Enter team place"
-                class="form-control"
-        />
-
         <label for="team-partners">Team Partners:</label>
         <input
                 type="text"
@@ -61,6 +52,10 @@
         <select id="team-players" multiple [(ngModel)]="team.players" class="form-control">
             <option *ngFor="let player of allPlayers" [ngValue]="player">{{ player.pseudo }}</option>
         </select>
+        <label for="region_id">Select Region:</label>
+        <select id="region_id"  [(ngModel)]="regions" class="form-control">
+            <option *ngFor="let region of regions" [ngValue]="region.id">{{ region.name }}</option>
+        </select>
 
         <label for="team-lieu">Team Location:</label>
         <input
@@ -68,15 +63,6 @@
                 id="team-lieu"
                 [(ngModel)]="team.lieu"
                 placeholder="Enter team location"
-                class="form-control"
-        />
-
-        <label for="team-region">Team Region:</label>
-        <input
-                type="number"
-                id="team-region"
-                [(ngModel)]="team.region_id"
-                placeholder="Enter team region"
                 class="form-control"
         />
 

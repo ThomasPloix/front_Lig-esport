@@ -12,7 +12,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./create-tournament.component.scss']
 })
 export class CreateTournamentComponent implements OnInit {
-  tournament: Competition = { name: '', teams_compete: [], matches: [] };
+  tournament: Competition = { name: '', teams_compete: [], matches: []};
   allTeams: Team[] = [];
   selectedTeams: Team[] = [];
 
@@ -48,6 +48,7 @@ export class CreateTournamentComponent implements OnInit {
           const match: Match = {
             team1: this.selectedTeams[i],
             team2: this.selectedTeams[j],
+            order_match: 0,
             date: '',
             result: false,
             score: 0,

@@ -38,6 +38,10 @@ export class TeamHolderService{
     }
     return TeamHolderService;
   }
+  static clearTeam(): TeamHolderService{
+    this._teamsList.length = 0;
+    return TeamHolderService;
+  }
 
   static clear():void {
     TreeManager.clear();
