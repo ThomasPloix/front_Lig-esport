@@ -14,6 +14,7 @@ export class TournamentService {
 
   generateTree() {
   this.competitionService.findById(3).subscribe((data) => {
+
     this.matches = this.competition?.matches;
     this.competition = data;
   });

@@ -9,7 +9,7 @@ import * as process from "node:process";
     providedIn: "root",
 })
 export class CompetitionService {
-    private regionsUrl = `http://${process.env["API_URL"]}/compete`; // Note the "api/" prefix here
+    private regionsUrl = `http://localhost:8080/compete`; // Note the "api/" prefix here
 
 
     constructor(private http: HttpClient) {}

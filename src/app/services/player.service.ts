@@ -8,7 +8,7 @@ import * as process from "node:process";
     providedIn: "root",
 })
 export class PlayerService {
-    private playersUrl = `http://${process.env["URL_API"]}/players`; // Your API endpoint for players
+    private playersUrl = `http://localhost:8080/players`; // Your API endpoint for players
 
     constructor(private http: HttpClient) {}
 
