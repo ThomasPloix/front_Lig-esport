@@ -3,12 +3,14 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Player } from "../models/player.model";
 import * as process from "node:process";
+import { environment } from "../../environments/environment"
 
 @Injectable({
     providedIn: "root",
 })
 export class PlayerService {
-    private playersUrl = `http://localhost:8080/players`; // Your API endpoint for players
+  private apiUrl = environment.apiUrl;
+  private playersUrl = `${this.apiUrl}:8080/players`; // Your API endpoint for players
 
     constructor(private http: HttpClient) {}
 

@@ -3,12 +3,14 @@ import { Observable } from "rxjs";
 import { Region } from "models/region.model";
 import { HttpClient } from "@angular/common/http";
 import { Team } from "../models/team.model"
+import { environment } from "../../environments/environment"
 
 @Injectable({
   providedIn: "root",
 })
 export class RegionService {
-  private regionsUrl = "http://localhost:8080/regions"; // Note the "api/" prefix here
+  private apiUrl = environment.apiUrl;
+  private regionsUrl = `${this.apiUrl}/regions`; // Note the "api/" prefix here
 
   constructor(private http: HttpClient) {}
 

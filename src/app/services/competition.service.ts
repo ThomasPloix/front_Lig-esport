@@ -4,12 +4,14 @@ import {HttpClient} from "@angular/common/http";
 import {Competition} from "../models/competition.model";
 import {Region} from "../models/region.model";
 import * as process from "node:process";
+import { environment } from "../../environments/environment"
 
 @Injectable({
     providedIn: "root",
 })
 export class CompetitionService {
-    private regionsUrl = `http://localhost:8080/compete`; // Note the "api/" prefix here
+    private apiUrl = environment.apiUrl;
+    private regionsUrl = `${this.apiUrl}/compete`; // Note the "api/" prefix here
 
 
     constructor(private http: HttpClient) {}

@@ -13,7 +13,7 @@ RUN npm install -g @angular/cli
 COPY . .
 RUN npm install
 # Builder l'application Angular pour la production
-RUN npm run build
+RUN npm run build --prod
 
 CMD ["npm", "start"]
 
