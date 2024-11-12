@@ -1,16 +1,15 @@
 .clicker-container {
   text-align: center;
-  margin-top: 50px;
-  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 1;
   background-image: url('/assets/yuumiframe.png');
-  background-size: contain; /* Scale the image to fit the container */
+  background-size: 100%; /* Scale the image to fit the container */
   background-repeat: no-repeat; /* Don't repeat the image */
   background-position: center; /* Center the frame */
-  padding: 40px; /* Add padding to avoid overlap with the frame */
-  padding-top: 60px;
-  overflow: hidden;
-  width: fit-content;
-  height: fit-content;
+  padding: 60px; /* Add padding to avoid overlap with the frame */
+  //overflow: hidden;
+  position: relative;
+  width: 500px;
+  height:500px;
 
   h1 {
     font-size: 2rem;
@@ -25,18 +24,19 @@
   // Styles for the clickable image
   .clickable-image {
     width: 200px;
+    height: 130px;
     cursor: pointer;
     transition: transform 0.1s ease-in-out;
 
     &:hover {
       transform: scale(1.1);
     }
-    margin-bottom: 50px;
   }
 
   // Styles for the explosion image
   .explosion-image {
-    width: 250px;
+    width: 200px;
+    height: 130px;
     margin-bottom: 50px;
   }
 
@@ -60,6 +60,19 @@
       outline: none;
     }
     // Add margin after the button (last element)
-    margin-bottom: 50px;
+    // margin-bottom: 50px;
   }
+}
+
+.clicker-background {
+  position: absolute;
+  top: 105px;
+  left: 42px;
+  width: 83%;
+  height: 57%;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: -1;
+}
+.clicker-content{
+  padding: 50px;
 }
