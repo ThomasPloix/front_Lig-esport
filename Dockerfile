@@ -21,7 +21,4 @@ FROM nginx:alpine
 
 # Copier les fichiers de build Angular dans le répertoire Nginx
 COPY --from=build /app/dist/front-skeleton /usr/share/nginx/html
-
-# Exposer le port 80 pour accéder à l'application
-EXPOSE 80
-
+COPY --from=build /app/default.conf /etc/nginx/conf.d/default.conf
