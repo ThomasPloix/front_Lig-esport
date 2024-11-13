@@ -11,23 +11,38 @@ $soft-orange-gradient: linear-gradient(135deg, #F05941, #F97F62); // Slightly li
 $vibrant-pink-gradient: linear-gradient(135deg, #BE3144, #D94E65);
 $deep-crimson-gradient: linear-gradient(0deg, #872341, #A43A59);
 
-
-
 nav {
   height: 62px;
   position: fixed;
-  top:0px;
-  left:0px;
+  top: 0;
+  left: 0;
   background: $dark-blue-gradient;
-  width:100%;
+  width: 100%;
   z-index: 1000;
+  overflow: hidden; // Ensure the animated line stays within the navbar
 
-  navsearch{
-    margin-left:40px;
+  // Add the animated energy line
+  &::after {
+    content: "";
+    position: absolute;
+    left: -100%; // Start off-screen
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    // Gradient fades in, brightens in the middle, then fades out gradually to the right
+    background: linear-gradient(
+                    90deg,
+                    transparent,
+                    $soft-orange 50%,
+                    transparent
+    );
+    animation: navbarEnergyFlow 6s infinite linear;
+    opacity: 0.8;
   }
 
-
-
+  navsearch {
+    margin-left: 40px;
+  }
 
   div {
     height: 100%;
@@ -46,9 +61,10 @@ nav {
     }
   }
 }
+
 .active {
-  color: white; /* Text color */
-  font-weight: bolder; /* Bold text for emphasis */
+  color: white;
+  font-weight: bolder;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
   border-radius: 5px;
   align-content: center;
@@ -67,27 +83,33 @@ mat-nav-list {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center; /* Ensure text is centered */
-    height: 100%; /* Make sure the link occupies the full height of the nav item */
+    text-align: center;
+    height: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
+
     &:hover {
       transform: scale(1.2);
     }
+
+    span,
+    a {
+      font-size: large;
+      color: theme.$white;
+      transition: 0.3s;
+      align-self: center;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
   }
+}
 
-
-  span,
-  a {
-    font-size: large;
-    color: theme.$white;
-    transition: 0.3s;
-    align-self: center;
-    margin-left: 10px;
-    margin-right: 10px;
+// Animation for the energy flux line
+@keyframes navbarEnergyFlow {
+  0% {
+    transform: translateX(-50%);
   }
-
-
-
+  100% {
+    transform: translateX(200%);
   }
-
+}

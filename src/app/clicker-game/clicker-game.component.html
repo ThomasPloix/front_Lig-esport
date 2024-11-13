@@ -2,13 +2,13 @@
     <div class="clicker-background" ></div>
 
         <div class="clicker-content" >
-            <h1>Kill the Yuumi</h1>
+            <h1>Kill the Yuumi !</h1>
             <p>Click the yuumi 10 times to make it explode!</p>
             <p>Clicks: {{clickCount}} / 10</p>
 
             <!-- Display the "explosion" image after 50 clicks -->
-            <img *ngIf="!isExploded" src="assets/yuumi.png" alt="Click Me" (click)="onImageClick()" class="clickable-image">
-            <img *ngIf="isExploded" src="assets/Explo.png" alt="Exploded" class="explosion-image">
+            <img *ngIf="!isExploded" src="../../assets/HomePage/yuumi.png" alt="Click Me" (click)="onImageClick()" class="clickable-image">
+            <img *ngIf="isExploded" src="../../assets/HomePage/Explo.png" alt="Exploded" class="explosion-image">
 
             <div>
                 <button (click)="resetGame()" *ngIf="isExploded">Reset Game</button>
