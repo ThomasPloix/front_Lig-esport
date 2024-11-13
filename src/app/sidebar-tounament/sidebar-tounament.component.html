@@ -1,8 +1,8 @@
 <div class="sidebar">
   <h2>Tournois</h2>
   <ul>
-    <li *ngFor="let tournoi of tournois">
-      <a href="#">{{ tournoi }}</a>
+    <li *ngFor="let tournoi of competitions">
+      <a (click)="handleTournoiClick(tournoi)" >{{ tournoi.name }}</a>
     </li>
   </ul>
 </div>
