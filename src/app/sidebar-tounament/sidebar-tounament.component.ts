@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Competition } from "../models/competition.model"
 import { Match } from "../models/match.model"
 import { CompetitionService } from "../services/competition.service"
-import { TournamentService } from "../tournament-package/service/TournamentService"
 
 @Component({
   selector: "app-sidebar",
@@ -16,7 +15,7 @@ export class SidebarTounamentComponent {
   competitions: Competition[] | undefined
   matches: Match[] | undefined
 
-  constructor(private competitionService : CompetitionService, private TournamentService: TournamentService) {
+  constructor(private competitionService : CompetitionService) {
     this.Find();
 
   }
@@ -25,11 +24,9 @@ export class SidebarTounamentComponent {
       console.log("Data", data);
       this.competitions = data;
       this.competitions.forEach(competition => {
+        console.log("Competition", competition);
         this.tournois.push(competition.name);
     });
     });
-  }
-  handleTournoiClick(tournoi: Competition): void {
-    this.TournamentService.selectTournoi(tournoi);
   }
 }

@@ -25,6 +25,7 @@ import { CreateTournamentComponent} from "./create-tournament/create-tournament.
 import {CreateTeamComponent} from "./create-team/create-team.component";
 import {AdminComponent} from "./admin/admin.component";
 import { SidebarTounamentComponent } from "./sidebar-tounament/sidebar-tounament.component"
+import {DeleteTeamComponent} from "./delete-team/delete-team.component";
 
 @NgModule({
     declarations: [
@@ -43,6 +44,7 @@ import { SidebarTounamentComponent } from "./sidebar-tounament/sidebar-tounament
       TeamFormComponent,
       SidebarTounamentComponent,
       AdminComponent,
+        DeleteTeamComponent,
 
 
 
