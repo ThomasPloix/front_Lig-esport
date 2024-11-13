@@ -10,17 +10,25 @@ import { CreateTeamComponent } from '../create-team/create-team.component'; // I
 })
 
 export class AdminComponent {
-  // To control the visibility of the Create Team form
-  isCreateTeamOpen: boolean = false;
+  // States to control the visibility of the sections
+  isCreateTeamOpen = false;
+  isDeleteTeamOpen = false;
 
   // Toggle the visibility of the Create Team section
   toggleCreateTeam() {
+    // Toggle "Create Team" and ensure "Delete Team" is closed
     this.isCreateTeamOpen = !this.isCreateTeamOpen;
+    if (this.isCreateTeamOpen) {
+      this.isDeleteTeamOpen = false; // Close Delete Team when Create Team is opened
+    }
   }
 
-  isDeleteTeamOpen: boolean = false;
-
+  // Method to toggle "Delete Team" section
   toggleDeleteTeam() {
+    // Toggle "Delete Team" and ensure "Create Team" is closed
     this.isDeleteTeamOpen = !this.isDeleteTeamOpen;
+    if (this.isDeleteTeamOpen) {
+      this.isCreateTeamOpen = false; // Close Create Team when Delete Team is opened
+    }
   }
 }
