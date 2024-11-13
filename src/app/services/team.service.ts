@@ -3,12 +3,14 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Team} from "../models/team.model";
 import {Competition} from "../models/competition.model";
+import { environment } from "../../environments/environment"
 
 @Injectable({
     providedIn: "root",
 })
 export class TeamService {
-    private teamsUrl = "http://localhost:8080/team"; // Note the "api/" prefix here
+  private apiUrl = environment.apiUrl;
+  private teamsUrl = `${this.apiUrl}/team`; // Note the "api/" prefix here
     constructor(private http: HttpClient) {}
 
     findAll(): Observable<Team[]> {
