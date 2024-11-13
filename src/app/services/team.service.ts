@@ -24,12 +24,12 @@ export class TeamService {
     }
     // Method to delete team by ID
     deleteTeamById(id: number): Observable<void> {
-        return this.http.delete<void>(`${this.apiUrl}/${id}`);
+        return this.http.delete<void>(`${this.teamsUrl}/${id}`);
     }
 
     // Method to delete team by Name
     deleteTeamByName(name: string): Observable<void> {
-        return this.http.delete<void>(`${this.apiUrl}/name/${name}`);
+        return this.http.delete<void>(`${this.teamsUrl}/name/${name}`);
     }
     /*
     findByRegion(): Observable<Team[]> {

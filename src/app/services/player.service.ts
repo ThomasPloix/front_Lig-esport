@@ -10,7 +10,7 @@ import { environment } from "../../environments/environment"
 })
 export class PlayerService {
   private apiUrl = environment.apiUrl;
-  private playersUrl = `${this.apiUrl}:8080/players`; // Your API endpoint for players
+  private playersUrl = `${this.apiUrl}/players`; // Your API endpoint for players
 
     constructor(private http: HttpClient) {}
 
