@@ -17,7 +17,7 @@ export class NavbarComponent {
     this.links.push({ name: "Equipe ", href: "teamstournament" })
     this.links.push({ name: "Tournament", href: "treetournament" })
     this.links.push({ name: "Create Tournament", href: "createtournament" })
-    this.links.push({ name: "Create Team", href: "createteam" })
+    this.links.push({ name: "ADMIN", href: "admin" })
   }
 
   // Handle search input and navigation logic

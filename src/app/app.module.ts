@@ -23,6 +23,7 @@ import { TeamComponent } from "./tournament-package/team/TeamComponent"
 import { TeamFormComponent } from "./tournament-package/team/team-form/TeamFormComponent"
 import { CreateTournamentComponent} from "./create-tournament/create-tournament.component";
 import {CreateTeamComponent} from "./create-team/create-team.component";
+import {AdminComponent} from "./admin/admin.component";
 
 @NgModule({
     declarations: [
@@ -34,28 +35,33 @@ import {CreateTeamComponent} from "./create-team/create-team.component";
         ClickerGameComponent,
         CreateTournamentComponent,
         CreateTeamComponent,
+        AdminComponent,
 
-      TreeView,
-      NodeComponent,
-      TeamManagementView,
-      TeamComponent,
-      TeamFormComponent,
+        TreeView,
+        NodeComponent,
+        TeamManagementView,
+        TeamComponent,
+        TeamFormComponent,
+
+
     ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatListModule,
-    FormsModule,
-    MatIconModule,
-    MatButtonModule,
-    HttpClientModule,
-    NgOptimizedImage,
-    OverlayDirective,
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatListModule,
+        FormsModule,
+        MatIconModule,
+        MatButtonModule,
+        HttpClientModule,
+        NgOptimizedImage,
+        OverlayDirective,
 
-    // Configure InMemoryWebApi for the app
-    // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
-  ],
+
+
+        // Configure InMemoryWebApi for the app
+        // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
+    ],
   providers: [],
   bootstrap: [AppComponent],
 })

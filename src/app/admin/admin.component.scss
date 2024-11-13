@@ -1,0 +1,63 @@
+// admin.component.scss
+$dark-blue: #22092C;     // Main background color
+$deep-crimson: #872341;  // Border of the cards
+$vibrant-pink: #BE3144;  // Inner card background
+$soft-orange: #F05941;   // Text or inner elements
+$blue-gradient-end: #3b3b6b;  // A lighter complementary blue
+
+$dark-blue-gradient: linear-gradient(135deg, $dark-blue, $blue-gradient-end);
+$soft-orange-gradient: linear-gradient(135deg, #F05941, #F97F62); // Slightly lighter hue
+$vibrant-pink-gradient: linear-gradient(135deg, #BE3144, #D94E65);
+$deep-crimson-gradient: linear-gradient(0deg, #872341, #A43A59);
+
+.toggle-button {
+  background: $vibrant-pink;   // Using your vibrant pink color for the button background
+  color: white;                // White text color for contrast
+  font-size: 18px;             // Increase font size to make the button text larger
+  padding: 12px 24px;          // Increase padding for a bigger button
+  border: none;                // Remove the default border
+  border-radius: 8px;          // Slightly rounded corners
+  cursor: pointer;            // Make the cursor pointer to indicate it's clickable
+  text-align: center;          // Ensure the text is centered
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  // Add a subtle shadow for depth
+  transition: background 0.3s ease, transform 0.3s ease; // Smooth hover transition
+
+  // Hover effect to change the button's color when the user hovers over it
+  &:hover {
+    background: $soft-orange; // Change to soft orange on hover
+    transform: translateY(-2px); // Slight lift effect on hover
+  }
+
+  // Active state to make it look pressed
+  &:active {
+    background: $vibrant-pink; // Reset to original color when clicked
+    transform: translateY(0); // Remove lift effect when clicked
+  }
+
+  // Position the button on the left within the container
+  margin: 20px 0;  // Add some space above and below the button
+  align-self: center; // Align it to the left in case of flex containers
+}
+
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;  // Align content to the left side
+  padding: 20px;
+  background-color: $dark-blue; // Use the dark-blue background for the container
+  color: white;
+  border-radius: 8px; // Rounded corners for the container
+}
+
+h1 {
+  color: $soft-orange;  // Heading color as soft-orange for better visibility
+  margin-bottom: 20px;
+  align-self: center;
+}
+
+.create-team-section {
+  background: $vibrant-pink; // Set the inner card background color
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+}

@@ -26,7 +26,7 @@
                 type="text"
                 id="team-logo"
                 [(ngModel)]="team.logo"
-                placeholder="Enter team logo"
+                placeholder="Enter team logo URL"
                 class="form-control"
         />
 
@@ -67,9 +67,11 @@
         />
 
     </div>
+    <div class="space">
 
+    </div>
     <!-- Submit Button -->
-    <button (click)="createTeam()" class="btn btn-primary">
+    <button (click)="createTeam()" class="btn btn-primary Create">
         Create Team
     </button>
 </div>
