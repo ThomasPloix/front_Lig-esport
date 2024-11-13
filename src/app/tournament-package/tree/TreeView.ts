@@ -8,6 +8,7 @@ import { TournamentService } from "../service/TournamentService"
 import { Competition } from "../../models/competition.model"
 import { Team } from "../../models/team.model"
 import { Match } from "../../models/match.model"
+import { CompetitionService } from "../../services/competition.service"
 
 @Component({
   selector: "tree-view",
@@ -28,6 +29,7 @@ export class TreeView {
   constructor(
     private _router: Router,
     private TournamentService: TournamentService,
+    private CompetitionService: CompetitionService,
   ) {
   }
 
@@ -49,6 +51,26 @@ export class TreeView {
 
       console.log(TeamHolderService.teams)
       this.tree = TreeManager.tree
+      this.TournamentService.selectedTournoi$.subscribe((data) => {
+
+        TreeManager.forEachNodee(Load, data);
+
+      function Load(node: NodeModel, data: Competition) {
+        let teams = data.teams_compete
+        console.log(teams, "eeeee")
+        console.log(node, "node")
+        if (node.team != undefined) {
+          for (let match of data?.matches) {
+            if (node.team.name == match.team1.name && !match.result) {
+              node.win()
+            }
+            if (node.team.name == match.team2.name && match.result) {
+              node.win()
+          }
+        }
+      }
+      }
+    })
 
       console.log(this.tree)
       this.log = TeamHolderService.log
