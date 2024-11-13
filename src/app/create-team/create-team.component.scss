@@ -15,6 +15,17 @@ $deep-crimson-gradient: linear-gradient(0deg, #872341, #A43A59);
   margin-top: 20px;
 }
 
-.Create{
-  background: $soft-orange;
+.Create {
+  background-color: #F05941;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+
+.Create:hover {
+  background-color: #D94E65;
 }

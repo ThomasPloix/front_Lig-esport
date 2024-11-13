@@ -3,7 +3,7 @@
 
     <!-- Button to toggle the Create Team section -->
     <button (click)="toggleCreateTeam()" class="toggle-button">
-        {{ isCreateTeamOpen ? 'Close Create Team' : ' Create Team' }}
+        {{ isCreateTeamOpen ? 'Close Create Team' : 'Create Team' }}
     </button>
 
     <!-- Create Team Section (Collapsible) -->
@@ -11,11 +11,13 @@
         <create-team></create-team>
     </div>
 
+    <!-- Button to toggle the Delete Team section -->
     <button (click)="toggleDeleteTeam()" class="toggle-button">
-        {{ isDeleteTeamOpen ? 'Close Delete Team' : ' Delete Team' }}
+        {{ isDeleteTeamOpen ? 'Close Delete Team' : 'Delete Team' }}
     </button>
 
-    <div *ngIf="isDeleteTeamOpen" class="Create-team-section">
+    <!-- Delete Team Section (Collapsible) -->
+    <div *ngIf="isDeleteTeamOpen" class="create-team-section">
         <app-delete-team></app-delete-team>
     </div>
 </div>
