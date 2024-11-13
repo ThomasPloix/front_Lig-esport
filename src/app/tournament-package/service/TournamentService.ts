@@ -3,6 +3,7 @@ import { CompetitionService } from "../../services/competition.service"
 
 import { Competition } from "../../models/competition.model"
 import { Match } from "../../models/match.model"
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,19 +12,14 @@ export class TournamentService {
   competition: Competition | undefined
   matches: Match[] | undefined
 
+  private selectedTournoiSubject = new BehaviorSubject<any>(null);
+  selectedTournoi$ = this.selectedTournoiSubject.asObservable();
   constructor(private competitionService : CompetitionService) {}
 
-  generateTree(competition: Competition) {
-  //   this.competitionService.findById(3).subscribe((data) => {
-  //
-  //   this.matches = this.competition?.matches.sort((a, b) => {
-  //     return a.order_match - b.order_match });
-  //   this.competition = data;
-  // });
-    this.competition = competition;
+
+  selectTournoi(tournoi: Competition): void {
+    this.selectedTournoiSubject.next(tournoi);
   }
-
-
 
   getMatches() {
     return this.matches;

@@ -9,7 +9,7 @@ export class TreeManager{
 
   private static _nodes: NodeModel[] = [];
   private static _tree: NodeModel;
-  private TournamentService: TournamentService
+  private tournamentService: TournamentService
 
   static get tree():NodeModel{
     // if(!this.hasTree()){
@@ -20,7 +20,7 @@ export class TreeManager{
     return this._tree;
   }
   constructor(TournamentService: TournamentService) {
-    this.TournamentService = TournamentService;
+    this.tournamentService = TournamentService;
   }
   static hasTree(): boolean {
     return (this._tree instanceof NodeModel);
