@@ -1,3 +1,4 @@
+<app-sidebar></app-sidebar>
 <div class="container --global">
   <div class="button-bar">
     <a class="button" [routerLink]="['/teamstournament']">Changer les équipes</a>
@@ -5,7 +6,7 @@
   </div>
 
   <br>
-  <h1 [ngClass]="competition?.name">Compétition : {{ competition?.name }}</h1>
+  <h1 class="titleCompetion" [ngClass]="competition?.name">Compétition : {{ competition?.name }}</h1>
   <hr><br>
 
   <!-- GOGO node-ception -->

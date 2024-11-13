@@ -14,7 +14,7 @@ export class NavbarComponent {
   constructor(private router: Router) {
     this.links.push({ name: "Regions", href: "regions" })
     this.links.push({ name: "Teams", href: "teams/1" })
-    this.links.push({ name: "Equipe ", href: "teamstournament" })
+    // this.links.push({ name: "Equipe ", href: "teamstournament" })
     this.links.push({ name: "Tournament", href: "treetournament" })
     this.links.push({ name: "Create Tournament", href: "createtournament" })
     this.links.push({ name: "ADMIN", href: "admin" })

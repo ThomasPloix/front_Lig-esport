@@ -32,12 +32,12 @@ export class TreeView{
     ) {}
 
     ngOnInit() {
-        if (!TeamHolderService.isFilled()) {
-            //FlashService.push('Vous devez avoir 2, 4, 8, 16 ou 32 équipes');
-            this._router.navigate(['/teamstournament']);
-            return;
-        }
-        this.TournamentService.generateTree();
+        // if (!TeamHolderService.isFilled()) {
+        //     //FlashService.push('Vous devez avoir 2, 4, 8, 16 ou 32 équipes');
+        //     this._router.navigate(['/teamstournament']);
+        //     return;
+        // }
+        // this.TournamentService.generateTree();
         this.matches = this.TournamentService.matches;
         this.competition = this.TournamentService.competition;
 
@@ -45,14 +45,14 @@ export class TreeView{
             console.log("Match", match);
         });
 
-        this.teams= this.TournamentService.competition?.teams_compete;
+        this.teams= this.competition?.teams_compete;
         if(this.teams != undefined){
           TeamHolderService.clearTeam()
           for (let team of this.teams) {
               TeamHolderService.addTeam(team.name);
           }
        }
-        console.log(this.competition?.matches);
+
         console.log(TeamHolderService.teams);
         this.tree = TreeManager.tree;
 

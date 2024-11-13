@@ -80,19 +80,31 @@ a {
   padding-right: 1em;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1200px; }
+  max-width: 1200px;
+  border-radius: 15px;
+  background-color: rgba(172, 135, 184, 0.73)
+}
 .container.\--global {
-  padding-bottom: 5rem; }
+  padding-bottom: 5rem;
+}
+.titleCompetion{
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-top: 10px;
+  color: #FFF;
+}
 
 .button {
+  margin-top: 10px;
   padding: 0.5em 1.5em;
   text-decoration: none;
   background-color: #ED794E;
   color: #FFF;
   cursor: pointer;
   border: none;
-  border-radius: 3px;
-  display: inline-block; }
+  border-radius: 5px;
+  display: inline-block;
+}
 .button:disabled {
   background-color: #BBB;
   cursor: default; }
@@ -148,7 +160,9 @@ a {
 .title {
   display: inline-block;
   font-size: 2rem;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  margin-top: 10px;
+}
 .title.\--trapped {
   color: #FFF; }
 

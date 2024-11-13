@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CompetitionService } from "../../services/competition.service"
+
 import { Competition } from "../../models/competition.model"
 import { Match } from "../../models/match.model"
 
@@ -12,18 +13,22 @@ export class TournamentService {
 
   constructor(private competitionService : CompetitionService) {}
 
-  generateTree() {
-  this.competitionService.findById(3).subscribe((data) => {
-
-    this.matches = this.competition?.matches;
-    this.competition = data;
-  });
+  generateTree(competition: Competition) {
+  //   this.competitionService.findById(3).subscribe((data) => {
+  //
+  //   this.matches = this.competition?.matches.sort((a, b) => {
+  //     return a.order_match - b.order_match });
+  //   this.competition = data;
+  // });
+    this.competition = competition;
   }
 
+
+
+  getMatches() {
+    return this.matches;
+  }
   clearTournament() {
-
   }
 
-
-  // Autres méthodes qui gèrent les interactions entre TreeManager et TeamHolderService
 }

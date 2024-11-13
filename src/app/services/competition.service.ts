@@ -11,21 +11,21 @@ import { environment } from "../../environments/environment"
 })
 export class CompetitionService {
     private apiUrl = environment.apiUrl;
-    private regionsUrl = `${this.apiUrl}/compete`; // Note the "api/" prefix here
+    private CompeteUrl = `${this.apiUrl}/compete`; // Note the "api/" prefix here
 
 
     constructor(private http: HttpClient) {}
 
     findAll(): Observable<Competition[]> {
-        return this.http.get<Competition[]>(this.regionsUrl);
+        return this.http.get<Competition[]>(this.CompeteUrl);
     }
 
     findById(id: number): Observable<Competition> { // Change id to bigint
-        return this.http.get<Competition>(`${this.regionsUrl}/${id}`);
+        return this.http.get<Competition>(`${this.CompeteUrl}/${id}`);
     }
 
     createTournament(tournament: Competition): Observable<Competition> {
-        return this.http.post<Competition>(`${this.regionsUrl}`, tournament);
+        return this.http.post<Competition>(`${this.CompeteUrl}`, tournament);
     }
 
 

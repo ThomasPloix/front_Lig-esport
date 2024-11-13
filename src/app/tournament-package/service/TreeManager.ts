@@ -4,11 +4,12 @@ import { TeamHolderService } from "./TeamHolderService"
 import { TournamentService } from "./TournamentService"
 
 
+
 export class TreeManager{
 
   private static _nodes: NodeModel[] = [];
   private static _tree: NodeModel;
-
+  private TournamentService: TournamentService
 
   static get tree():NodeModel{
     // if(!this.hasTree()){
@@ -18,7 +19,9 @@ export class TreeManager{
     this.buildTree();
     return this._tree;
   }
-
+  constructor(TournamentService: TournamentService) {
+    this.TournamentService = TournamentService;
+  }
   static hasTree(): boolean {
     return (this._tree instanceof NodeModel);
   }
@@ -81,7 +84,6 @@ export class TreeManager{
   static forEachNode(callback: Function): void {
     for (let i:number = 0; i < this._nodes.length; i++) {
       let node: NodeModel = TreeManager._nodes[i];
-
       callback(node);
     }
   }

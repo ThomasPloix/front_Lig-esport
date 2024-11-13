@@ -24,6 +24,7 @@ import { TeamFormComponent } from "./tournament-package/team/team-form/TeamFormC
 import { CreateTournamentComponent} from "./create-tournament/create-tournament.component";
 import {CreateTeamComponent} from "./create-team/create-team.component";
 import {AdminComponent} from "./admin/admin.component";
+import { SidebarTounamentComponent } from "./sidebar-tounament/sidebar-tounament.component"
 
 @NgModule({
     declarations: [
@@ -35,13 +36,15 @@ import {AdminComponent} from "./admin/admin.component";
         ClickerGameComponent,
         CreateTournamentComponent,
         CreateTeamComponent,
-        AdminComponent,
+      TreeView,
+      NodeComponent,
+      TeamManagementView,
+      TeamComponent,
+      TeamFormComponent,
+      SidebarTounamentComponent,
+      AdminComponent,
 
-        TreeView,
-        NodeComponent,
-        TeamManagementView,
-        TeamComponent,
-        TeamFormComponent,
+
 
 
     ],
@@ -57,11 +60,9 @@ import {AdminComponent} from "./admin/admin.component";
         NgOptimizedImage,
         OverlayDirective,
 
-
-
-        // Configure InMemoryWebApi for the app
-        // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
-    ],
+    // Configure InMemoryWebApi for the app
+    // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

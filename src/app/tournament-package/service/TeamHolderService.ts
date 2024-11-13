@@ -5,14 +5,14 @@ import { TreeManager } from "./TreeManager"
 export class TeamHolderService{
 
   private static _teamsList: TeamModel[] = [
-    new TeamModel("Team 1"),
-    new TeamModel("Team 2"),
-    new TeamModel("Team 3"),
-    new TeamModel("Team 4"),
-    new TeamModel("Team 5"),
-    new TeamModel("Team 6"),
-    new TeamModel("Team 7"),
-    new TeamModel("Team 8"),
+    // new TeamModel("Team 1"),
+    // new TeamModel("Team 2"),
+    // new TeamModel("Team 3"),
+    // new TeamModel("Team 4"),
+    // new TeamModel("Team 5"),
+    // new TeamModel("Team 6"),
+    // new TeamModel("Team 7"),
+    // new TeamModel("Team 8"),
   ];
 
   private static _log: {}[] = [];
