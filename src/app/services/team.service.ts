@@ -22,10 +22,20 @@ export class TeamService {
     createTeam(team: Team): Observable<Team> {
         return this.http.post<Team>(`${this.teamsUrl}`, team);
     }
+    // Method to delete team by ID
+    deleteTeamById(id: number): Observable<void> {
+        return this.http.delete<void>(`${this.apiUrl}/${id}`);
+    }
+
+    // Method to delete team by Name
+    deleteTeamByName(name: string): Observable<void> {
+        return this.http.delete<void>(`${this.apiUrl}/name/${name}`);
+    }
     /*
     findByRegion(): Observable<Team[]> {
         return this.http.get<Team[]>(this.teamsUrl/${reg});
     }
+
 
      */
 }

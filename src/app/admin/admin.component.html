@@ -10,5 +10,13 @@
     <div *ngIf="isCreateTeamOpen" class="create-team-section">
         <create-team></create-team>
     </div>
+
+    <button (click)="toggleDeleteTeam()" class="toggle-button">
+        {{ isDeleteTeamOpen ? 'Close Delete Team' : ' Delete Team' }}
+    </button>
+
+    <div *ngIf="isDeleteTeamOpen" class="Create-team-section">
+        <app-delete-team></app-delete-team>
+    </div>
 </div>
 

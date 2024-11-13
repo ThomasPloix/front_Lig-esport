@@ -1,0 +1,49 @@
+/* delete-team.component.scss */
+.delete-team-container {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button.delete-button {
+  background-color: #F05941;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+
+button.delete-button:hover {
+  background-color: #D94E65;
+}
+
+.delete-message {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.delete-message.success {
+  color: green;
+}
+
+.delete-message.error {
+  color: red;
+}

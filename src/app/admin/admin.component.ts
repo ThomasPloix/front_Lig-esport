@@ -17,4 +17,10 @@ export class AdminComponent {
   toggleCreateTeam() {
     this.isCreateTeamOpen = !this.isCreateTeamOpen;
   }
+
+  isDeleteTeamOpen: boolean = false;
+
+  toggleDeleteTeam() {
+    this.isDeleteTeamOpen = !this.isDeleteTeamOpen;
+  }
 }
