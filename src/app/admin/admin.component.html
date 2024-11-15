@@ -17,6 +17,10 @@
         <button (click)="toggleCreatePlayer()" [class.clicked]="isCreatePlayerOpen" class="toggle-button">
             {{ isCreatePlayerOpen ? 'Close Create Player' : 'Create Player' }}
         </button>
+
+        <button (click)="toggleCreateTournament()" [class.clicked]="isCreateTournamentOpen" class="toggle-button">
+            {{ isCreateTournamentOpen ? 'Close Create Tournament' : 'Create Tournament'}}
+        </button>
     </div>
 
     <!-- Create Team Section (Collapsible) -->
@@ -32,5 +36,9 @@
     <!-- Create Player Section (Collapsible) -->
     <div *ngIf="isCreatePlayerOpen" class="create-team-section">
         <create-player></create-player>
+    </div>
+
+    <div *ngIf="isCreateTournamentOpen" class="create-team-section">
+        <app-create-tournament></app-create-tournament>
     </div>
 </div>

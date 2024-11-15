@@ -5,6 +5,8 @@ import { Match } from '../models/match.model';
 import { TeamService } from 'services/team.service';
 import { CompetitionService } from 'services/competition.service';
 import {Router} from "@angular/router";
+import {Region} from "../models/region.model";
+import {RegionService} from "../services/region.service";
 
 @Component({
   selector: 'app-create-tournament',
@@ -15,10 +17,14 @@ export class CreateTournamentComponent implements OnInit {
   tournament: Competition = { name: '', region: 1,  teams_compete: [], matches: []};
   allTeams: Team[] = [];
   selectedTeams: Team[] = [];
+  regions: Region[] = [];
 
-  constructor(private teamService: TeamService, private tournamentService: CompetitionService, private router: Router) {}
+  constructor(private teamService: TeamService, private tournamentService: CompetitionService, private regionService: RegionService,private router: Router) {}
 
   ngOnInit(): void {
+    this.regionService.findAll().subscribe((regions) => {
+      this.regions = regions;
+    });
     // Fetch existing teams from the backend
     this.teamService.findAll().subscribe((teams) => {
       this.allTeams = teams;

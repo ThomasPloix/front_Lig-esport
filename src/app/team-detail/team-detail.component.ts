@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Team} from "../models/team.model";
 import {Player} from "../models/player.model";
 import {ActivatedRoute} from "@angular/router";
@@ -24,15 +24,17 @@ import { CommonModule } from '@angular/common'; // Import CommonModule
 export class TeamDetailComponent implements OnInit {
 
   team: Team | undefined;
-  teams: Team [] = [];
+  @Input() team_id?: number =0;
   expandedPlayerIndex: number | null = null; // To track which player is expanded
 
   constructor(private route: ActivatedRoute, private teamService: TeamService) {}
   ngOnInit(): void {
     // Get the id from the route and fetch the region
-    const teamId = Number(this.route.snapshot.paramMap.get('id'));
-    console.log(teamId);
-    this.teamService.findById(teamId).subscribe((data) => {
+      if (this.team_id == 0){
+          this.team_id = Number(this.route.snapshot.paramMap.get('id'));
+      }
+    // @ts-ignore
+      this.teamService.findById(this.team_id).subscribe((data) => {
       this.team = data;
       this.team.players.forEach((Player) => {
           Player.champion_prefs.forEach((champion) => {
@@ -40,7 +42,6 @@ export class TeamDetailComponent implements OnInit {
           });
         });
       });
-      console.log(this.team);
     }
 
   // Function to toggle player details

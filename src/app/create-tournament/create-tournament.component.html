@@ -13,6 +13,13 @@
         />
     </div>
 
+    <div class="form-group">
+        <label for="region_id">Select Region:</label>
+        <select id="region_id"  [(ngModel)]="tournament.region" class="form-control">
+            <option *ngFor="let region of regions" [ngValue]="region.id" >{{ region.name }}</option>
+        </select>
+    </div>
+
     <!-- Teams Selection -->
     <div class="form-group">
         <label>Select Teams:</label>
