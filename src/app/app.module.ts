@@ -26,6 +26,7 @@ import {CreateTeamComponent} from "./create-team/create-team.component";
 import {AdminComponent} from "./admin/admin.component";
 import { SidebarTounamentComponent } from "./sidebar-tounament/sidebar-tounament.component"
 import {DeleteTeamComponent} from "./delete-team/delete-team.component";
+import {CreatePlayerComponent} from "./create-player/create-player.component";
 
 @NgModule({
     declarations: [
@@ -37,6 +38,7 @@ import {DeleteTeamComponent} from "./delete-team/delete-team.component";
         ClickerGameComponent,
         CreateTournamentComponent,
         CreateTeamComponent,
+        CreatePlayerComponent,
       TreeView,
       NodeComponent,
       TeamManagementView,

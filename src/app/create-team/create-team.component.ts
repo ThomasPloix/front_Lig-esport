@@ -22,7 +22,6 @@ export class CreateTeamComponent implements OnInit {
         ) {}
 
   ngOnInit(): void {
-
       this.regionService.findAll().subscribe((regions) => {
       this.regions = regions;
       });

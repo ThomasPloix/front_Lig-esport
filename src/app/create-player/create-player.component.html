@@ -1,0 +1,55 @@
+<div class="create-player">
+    <h1>Create Player</h1>
+
+    <!-- Player Details -->
+    <div class="form-group">
+        <label for="player-firstName">First Name:</label>
+        <input
+                type="text"
+                id="player-firstName"
+                [(ngModel)]="player.firstName"
+                placeholder="Enter first name"
+                class="form-control"
+        />
+
+        <label for="player-lastName">Last Name:</label>
+        <input
+                type="text"
+                id="player-lastName"
+                [(ngModel)]="player.lastName"
+                placeholder="Enter last name"
+                class="form-control"
+        />
+
+        <label for="player-pseudo">Pseudo:</label>
+        <input
+                type="text"
+                id="player-pseudo"
+                [(ngModel)]="player.pseudo"
+                placeholder="Enter pseudo"
+                class="form-control"
+        />
+
+        <label for="player-role">Role:</label>
+        <input
+                type="text"
+                id="player-role"
+                [(ngModel)]="player.role"
+                placeholder="Enter role"
+                class="form-control"
+        />
+
+        <label for="player-champions">Champion Preferences:</label>
+        <select id="player-champions" multiple [(ngModel)]="player.champion_prefs" class="form-control">
+            <option *ngFor="let champion of allChampions" [ngValue]="champion">{{ champion.name }}</option>
+        </select>
+    </div>
+
+    <div class="space">
+
+    </div>
+    <!-- Submit Button -->
+    <button (click)="createPlayer()" class="btn btn-primary Create">
+        Create Player
+    </button>
+</div>

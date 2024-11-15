@@ -13,6 +13,7 @@ export class AdminComponent {
   // States to control the visibility of the sections
   isCreateTeamOpen = false;
   isDeleteTeamOpen = false;
+  isCreatePlayerOpen = false;
 
   // Toggle the visibility of the Create Team section
   toggleCreateTeam() {
@@ -20,6 +21,7 @@ export class AdminComponent {
     this.isCreateTeamOpen = !this.isCreateTeamOpen;
     if (this.isCreateTeamOpen) {
       this.isDeleteTeamOpen = false; // Close Delete Team when Create Team is opened
+      this.isCreatePlayerOpen = false;
     }
   }
 
@@ -29,6 +31,18 @@ export class AdminComponent {
     this.isDeleteTeamOpen = !this.isDeleteTeamOpen;
     if (this.isDeleteTeamOpen) {
       this.isCreateTeamOpen = false; // Close Create Team when Delete Team is opened
+      this.isCreatePlayerOpen = false;
     }
   }
+
+  toggleCreatePlayer() {
+    // Toggle "Create Team" and ensure "Delete Team" is closed
+    this.isCreatePlayerOpen = !this.isCreatePlayerOpen;
+    if (this.isCreatePlayerOpen) {
+      this.isDeleteTeamOpen = false; // Close Delete Team when Create Team is opened
+      this.isCreateTeamOpen = false
+    }
+  }
+
+
 }
