@@ -18,7 +18,6 @@ export class SidebarTounamentComponent {
 
   constructor(private competitionService : CompetitionService, private TournamentService: TournamentService) {
     this.Find();
-
   }
   Find() {
     this.competitionService.findAll().subscribe((data) => {
@@ -27,6 +26,7 @@ export class SidebarTounamentComponent {
       this.competitions.forEach(competition => {
         this.tournois.push(competition.name);
     });
+      this.TournamentService.selectTournoi(this.competitions[0])
     });
   }
   handleTournoiClick(tournoi: Competition): void {
