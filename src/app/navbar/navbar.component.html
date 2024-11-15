@@ -14,7 +14,7 @@
     <mat-nav-list>
       @for (link of links; track link) {
       <a mat-list-item routerLink="{{ link.href }}" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">
-        <span>{{ link.name }}</span>
+        <span class="nav-link-text">{{ link.name }}</span>
       </a>
       }
     </mat-nav-list>

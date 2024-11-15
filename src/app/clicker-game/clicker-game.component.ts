@@ -9,8 +9,8 @@ export class ClickerGameComponent {
   clickCount: number = 0;
   isExploded: boolean = false;
   totalClicks: number = 10; // You can change this to any number of clicks
-  clickSound = new Audio('assets/Meow.mp3');  // Load the sound file
-  explosionSound = new Audio('assets/Explosion.mp3');
+  clickSound = new Audio('assets/HomePage/Meow2.mp3');  // Load the sound file
+  explosionSound = new Audio('assets/HomePage/Explosion.mp3');
 
   // Function to handle image click
   onImageClick() {

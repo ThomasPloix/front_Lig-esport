@@ -4,9 +4,10 @@
   align-items: center;
   margin: 25px;
   flex-direction: column;
+  font-family: helvetica, sans-serif;
 
   .title {
-    font-family: Caveat, sans-serif;
+    font-family: american typewriter, serif;
     font-size: 4.5em;
     font-weight: 700;
     margin: 30px 0;
@@ -26,28 +27,7 @@
     border-radius: 50px;
   }
 
-  .card {
-    margin-top: 50px;
-    margin-left: 50px;
-    border: none;
-    display: flex;
-    align-items: center;
 
-    img {
-      height: 64%;
-      width: 68%;
-      margin-left: 20px;
-    }
-
-    .card-text {
-      font-family: "Dancing Script", sans-serif;
-      font-size: x-large;
-      margin-top: 0;
-      line-height: 1.7;
-      max-width: 400px;
-      margin-left: 15px;
-    }
-  }
   .yuumi{
     align-items: center;
     height: fit-content;
@@ -72,6 +52,8 @@
   }
 
   .card {
+    margin-top: 50px;
+    margin-left: 50px;
     width: 350px;
     border: 1px solid #872341;
     border-radius: 8px;
@@ -84,6 +66,7 @@
 
   .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 0 8px 4px #872341;
   }
 
   .card img {
