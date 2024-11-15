@@ -21,6 +21,7 @@ nav {
   z-index: 1000;
   overflow: hidden; // Ensure the animated line stays within the navbar
 
+
   // Add the animated energy line
   &::after {
     content: "";
@@ -88,9 +89,12 @@ mat-nav-list {
     padding-top: 10px;
     padding-bottom: 10px;
     margin-left: 30px;
+    border-radius: 5px;
+
 
     &:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
+      box-shadow: 0 0 4px 1px #872341;
     }
 
     span,
@@ -101,6 +105,8 @@ mat-nav-list {
       align-self: center;
       margin-left: 10px;
       margin-right: 10px;
+      font-family: helvetica, sans-serif;
+      font-weight: bold;
     }
   }
 }
