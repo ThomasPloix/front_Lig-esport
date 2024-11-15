@@ -24,7 +24,7 @@ export class PlayerService {
         return this.http.get<Player>(`${this.playersUrl}/${id}`);
     }
 
-    /* Create a new player
+    // Create a new player
     createPlayer(player: Player): Observable<Player> {
         return this.http.post<Player>(this.playersUrl, player);
     }
@@ -40,5 +40,4 @@ export class PlayerService {
         return this.http.delete<void>(`${this.playersUrl}/${id}`);
     }
 
-     */
 }

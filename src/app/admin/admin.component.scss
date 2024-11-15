@@ -1,4 +1,3 @@
-// admin.component.scss
 $dark-blue: #22092C;     // Main background color
 $deep-crimson: #872341;  // Border of the cards
 $vibrant-pink: #BE3144;  // Inner card background
@@ -10,54 +9,78 @@ $soft-orange-gradient: linear-gradient(135deg, #F05941, #F97F62); // Slightly li
 $vibrant-pink-gradient: linear-gradient(135deg, #BE3144, #D94E65);
 $deep-crimson-gradient: linear-gradient(0deg, #872341, #A43A59);
 
+// Updated toggle-button styling
 .toggle-button {
-  background: $vibrant-pink;   // Using your vibrant pink color for the button background
-  color: white;                // White text color for contrast
-  font-size: 18px;             // Increase font size to make the button text larger
-  padding: 12px 24px;          // Increase padding for a bigger button
-  border: none;                // Remove the default border
-  border-radius: 8px;          // Slightly rounded corners
-  cursor: pointer;            // Make the cursor pointer to indicate it's clickable
-  text-align: center;          // Ensure the text is centered
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  // Add a subtle shadow for depth
-  transition: background 0.3s ease, transform 0.3s ease; // Smooth hover transition
+  background: $vibrant-pink;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.3s ease;
 
-  // Hover effect to change the button's color when the user hovers over it
   &:hover {
-    background: $soft-orange; // Change to soft orange on hover
-    transform: translateY(-2px); // Slight lift effect on hover
+    background: $soft-orange;
+    transform: translateY(-2px);
   }
 
-  // Active state to make it look pressed
   &:active {
-    background: $vibrant-pink; // Reset to original color when clicked
-    transform: translateY(0); // Remove lift effect when clicked
+    background: $vibrant-pink;
+    transform: translateY(0);
   }
-
-  // Position the button on the left within the container
-  margin: 20px 0;  // Add some space above and below the button
-  align-self: center; // Align it to the left in case of flex containers
+  &.clicked {
+    background: $soft-orange; // Button color when clicked
+    border: 2px solid $vibrant-pink; // Optionally add a border to show it's clicked
+  }
 }
 
+// Align buttons next to each other
+.button-group {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+// Center collapsible sections in the container
+.create-team-section,
+.app-delete-team-section,
+.create-player-section {
+  display: flex;
+  justify-content: center;      // Center horizontally
+  align-items: center;          // Center vertically if content requires it
+  margin-top: 20px;
+  width: fit-content;                  // Ensure sections take full width of the container
+  background: $vibrant-pink;    // Background color for collapsibles
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // Optional for depth
+}
+
+// Admin container layout
 .admin-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;  // Align content to the left side
+  align-items: center;          // Center all items inside the admin-container
   padding: 20px;
-  background-color: $dark-blue; // Use the dark-blue background for the container
+  background: #22092C80; // Use dark blue for the background
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 20px;
   color: white;
-  border-radius: 8px; // Rounded corners for the container
+  border-radius: 8px;
+  width: 100%;                  // Ensure the admin-container takes full width
 }
 
 h1 {
-  color: $soft-orange;  // Heading color as soft-orange for better visibility
+  color: $soft-orange;
   margin-bottom: 20px;
-  align-self: center;
-}
+  text-align: center;
+  font-family: american typewriter, serif;
+  font-weight: bold;
+  font-size: 2.5rem;
 
-.create-team-section {
-  background: $vibrant-pink; // Set the inner card background color
-  padding: 15px;
-  border-radius: 8px;
-  margin-top: 10px;
 }
