@@ -1,27 +1,29 @@
-import {Component, OnInit} from '@angular/core';
-import {Team} from "../models/team.model";
-import {ActivatedRoute} from "@angular/router";
-import {TeamService} from "../services/team.service";
-import {TeamDetailComponent} from "../team-detail/team-detail.component";
+import { Component, OnInit } from '@angular/core';
+import { Region } from "../models/region.model";
+import { RegionService } from "../services/region.service";
+import { TeamDetailComponent } from "../team-detail/team-detail.component";
+import {NgForOf} from "@angular/common";
 
 @Component({
   selector: 'teams',
   standalone: true,
   imports: [
-    TeamDetailComponent
+    TeamDetailComponent,
+    NgForOf
   ],
   templateUrl: './teams.component.html',
   styleUrl: './teams.component.scss'
 })
 export class TeamsComponent implements OnInit {
 
-  teams: Team [] = [];
+  regions: Region[] = []; // List of regions, each containing their teams
 
-  constructor(private route: ActivatedRoute, private teamService: TeamService) {}
+  constructor(private regionService: RegionService) {}
 
   ngOnInit(): void {
-        this.teamService.findAll().subscribe(data => {
-          this.teams = data;
-        })
-    }
+    // Fetch regions which include their teams
+    this.regionService.findAll().subscribe(data => {
+      this.regions = data;
+    });
+  }
 }

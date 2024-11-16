@@ -1,3 +1,11 @@
-@for(team of teams; track team){
-    <team-detail [team_id]=team.id></team-detail>
-}
+<div class="teams-container">
+    <div *ngFor="let region of regions" class="region-section">
+        <h2>
+            <img [src]="region.logo" alt="{{ region.name }} Logo" class="region-logo" />
+            {{ region.name }}
+        </h2>
+        <div *ngFor="let team of region.teams">
+            <team-detail [team_id]="team.id"></team-detail>
+        </div>
+    </div>
+</div>
