@@ -31,11 +31,12 @@ Le projet Ligward est une application web ayant pour but de réunir tout l'espor
 
 - **Configuration du Backend** :
     - Cloner le dépôt.
-    - Construire et exécuter le backend Spring Boot en utilisant Maven.
-    - Mentionner toute donnée d'initialisation ou étape de configuration de la base de données.
+    - Copier le fichier .env.sample et le renommer en .env
+    - Remplir les variables d'environnements
+    - Lancer la commande docker compose up --build dans le répertoire du backend
 - **Configuration du Frontend** :
     - Installer les dépendances avec npm install.
     - Lancer l'application Angular avec ng serve.
 - **Accès** : 
     - URL d`accès en local: **http://localhost:4200**
-    - URL en ligne: **http://46.101.181.73**
+    - URL en ligne: **http://www.ligward.me**
